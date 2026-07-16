@@ -723,6 +723,38 @@
         .mb-8 {
             margin-bottom: 8px;
         }
+
+                /* Demo Image Wrapper - for perfect fit */
+        .demo-image-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .demo-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* این خط باعث می‌شود تصویر کل قاب را پر کند */
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .demo-card:hover .demo-image-wrapper img {
+            transform: scale(1.03);
+            /* جلوه بزرگ‌نمایی هنگام هاور */
+        }
+        
+        /* برای نمایش بهتر در موبایل */
+        @media (max-width: 600px) {
+            .demo-image-wrapper {
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -905,7 +937,9 @@
     
             <div class="demo-grid">
                 <div class="demo-card">
-                    <img src="HeatmapView.png" alt="Heatmap View" />
+                    <div class="demo-image-wrapper">
+                        <img src="HeatmapView.png" alt="Heatmap View" />
+                    </div>
                     <div class="demo-body">
                         <h4 data-en="🔥 Heatmap View" data-fa="🔥 نمایش هیت‌مپ">🔥 Heatmap View</h4>
                         <p data-en="Monthly calendar with heatmap showing data intensity and patterns." data-fa="تقویم ماهانه با هیت‌مپ نمایش شدت و الگوهای داده‌ها.">
@@ -916,7 +950,9 @@
                 </div>
     
                 <div class="demo-card">
-                    <img src="AnnualView.png" alt="Annual View" />
+                    <div class="demo-image-wrapper">
+                        <img src="AnnualView.png" alt="Annual View" />
+                    </div>
                     <div class="demo-body">
                         <h4 data-en="📆 Annual Calendar" data-fa="📆 تقویم سالانه">📆 Annual Calendar</h4>
                         <p data-en="Full year view with all 12 months displayed simultaneously for easy comparison." data-fa="نمایش کامل سال با تمام ۱۲ ماه به صورت همزمان برای مقایسه آسان.">
@@ -927,7 +963,9 @@
                 </div>
     
                 <div class="demo-card">
-                    <img src="SelectionView.png" alt="Selection Modes" />
+                    <div class="demo-image-wrapper">
+                        <img src="SelectionView.png" alt="Selection Modes" />
+                    </div>
                     <div class="demo-body">
                         <h4 data-en="🎯 Selection Modes" data-fa="🎯 حالت‌های انتخاب">🎯 Selection Modes</h4>
                         <p data-en="Single date, range selection, and multiple individual days for any scenario." data-fa="انتخاب تاریخ تکی، بازه‌ای و روزهای جداگانه برای هر سناریو.">
@@ -939,7 +977,6 @@
             </div>
         </div>
     </section>
-
     <!-- Download Section -->
     <section class="section" style="padding-top:0;">
         <div class="container">
