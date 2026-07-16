@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Persian Calendar Pro | Power BI Custom Visual</title>
 
-    <!-- Font & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <style>
-        /* ----- Reset & Base ----- */
         * {
             margin: 0;
             padding: 0;
@@ -55,7 +53,7 @@
             padding: 0 24px;
         }
 
-        /* ----- Language Toggle ----- */
+        /* Language Toggle */
         .lang-toggle {
             position: fixed;
             top: 20px;
@@ -93,7 +91,7 @@
             background: var(--gray-100);
         }
 
-        /* ----- Header / Hero ----- */
+        /* Hero */
         .hero {
             padding: 80px 0 64px;
             background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
@@ -143,6 +141,11 @@
             font-weight: 500;
         }
 
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
         .btn-group {
             display: flex;
             flex-wrap: wrap;
@@ -184,6 +187,18 @@
         .btn-outline:hover {
             background: var(--gray-100);
             border-color: var(--gray-600);
+        }
+
+        .btn-download {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-download:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
         }
 
         .hero-visual {
@@ -258,6 +273,12 @@
             font-weight: 500;
         }
 
+        .mockup-grid .day.selected {
+            background: #fbbf24;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
         .mockup-grid .day.other {
             color: var(--gray-300);
         }
@@ -272,7 +293,7 @@
             color: var(--gray-500);
         }
 
-        /* ----- Features ----- */
+        /* Sections */
         .section {
             padding: 72px 0;
         }
@@ -292,9 +313,22 @@
             margin-bottom: 48px;
         }
 
+        .section-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 32px;
         }
 
@@ -329,7 +363,154 @@
             font-size: 0.95rem;
         }
 
-        /* ----- Technical / Files ----- */
+        .feature-tag {
+            display: inline-block;
+            background: var(--gray-200);
+            color: var(--gray-700);
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* Icon Display */
+        .icon-section {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .icon-display {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .icon-display img {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            border: 2px solid var(--gray-200);
+            padding: 8px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            object-fit: contain;
+        }
+
+        .icon-display .icon-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .icon-display .icon-info p {
+            color: var(--gray-600);
+        }
+
+        /* Demo Images */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .demo-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .demo-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .demo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .demo-card .demo-body {
+            padding: 16px 20px 20px;
+        }
+
+        .demo-card .demo-body h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .demo-card .demo-body p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* Options List */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .option-item {
+            background: var(--white);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+
+        .option-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option-item i {
+            color: var(--primary);
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(145deg, var(--primary-light) 0%, var(--white) 100%);
+            border-radius: var(--radius);
+            padding: 48px;
+            margin-top: 32px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+        }
+
+        .download-section h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .download-section p {
+            color: var(--gray-600);
+            max-width: 500px;
+            margin: 0 auto 24px;
+        }
+
+        .download-section .btn-group {
+            justify-content: center;
+        }
+
+        /* Tech Section */
         .tech-section {
             background: var(--gray-50);
             border-top: 1px solid var(--gray-200);
@@ -370,7 +551,7 @@
             transform: translateY(-2px);
         }
 
-        /* ----- Privacy & Support ----- */
+        /* Privacy & Support */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -436,7 +617,7 @@
             text-decoration: underline;
         }
 
-        /* ----- Footer ----- */
+        /* Footer */
         .footer {
             padding: 32px 0;
             border-top: 1px solid var(--gray-200);
@@ -457,7 +638,7 @@
             color: var(--primary);
         }
 
-        /* ----- Responsive (RTL support for Persian) ----- */
+        /* Responsive */
         body[dir="rtl"] {
             direction: rtl;
             text-align: right;
@@ -490,6 +671,13 @@
             .mockup-card {
                 max-width: 100%;
             }
+            .icon-display {
+                flex-direction: column;
+                text-align: center;
+            }
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
@@ -515,9 +703,17 @@
             .file-grid {
                 grid-template-columns: 1fr;
             }
+            .download-section {
+                padding: 32px 20px;
+            }
+            .download-section h3 {
+                font-size: 1.3rem;
+            }
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        /* ----- Utilities ----- */
         .text-center {
             text-align: center;
         }
@@ -526,14 +722,6 @@
         }
         .mb-8 {
             margin-bottom: 8px;
-        }
-        .gap-8 {
-            gap: 8px;
-        }
-        .flex-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
         }
     </style>
 </head>
@@ -552,23 +740,24 @@
                 <h1 data-en="Persian Calendar <span>Pro</span>" data-fa="تقویم فارسی <span>حرفه‌ای</span>">
                     Persian Calendar <span>Pro</span>
                 </h1>
-                <p class="hero-sub" data-en="Professional Jalali (Persian) calendar custom visual for Microsoft Power BI. Certified, open-source, and ready for AppSource."
-                   data-fa="ویژوال سفارشی تقویم جلالی (فارسی) حرفه‌ای برای مایکروسافت پاور بی‌آی. تأییدشده، متن‌باز و آماده برای AppSource.">
-                    Professional Jalali (Persian) calendar custom visual for Microsoft Power BI. Certified, open-source, and ready for AppSource.
+                <p class="hero-sub" data-en="<strong>First Jalali Calendar</strong> custom visual for Microsoft Power BI. Professional, privacy-first, and fully configurable."
+                   data-fa="<strong>اولین تقویم جلالی</strong> ویژه‌ی پاور بی‌آی. حرفه‌ای، حریم‌خصوصی‌محور و کاملاً قابل تنظیم.">
+                    <strong>First Jalali Calendar</strong> custom visual for Microsoft Power BI. Professional, privacy-first, and fully configurable.
                 </p>
 
                 <div class="hero-badges">
-                    <span class="badge">✅ Power BI Certified</span>
-                    <span class="badge">📦 Version 1.0.0.0</span>
+                    <span class="badge">✅ First Jalali Calendar on Power BI</span>
+                    <span class="badge">📦 v1.0.0.0</span>
+                    <span class="badge badge-success">🔒 100% Privacy</span>
                     <span class="badge">🌐 API 5.11</span>
                 </div>
 
                 <div class="btn-group">
-                    <a href="#" class="btn btn-primary" data-en="Download .pbiviz" data-fa="دانلود فایل .pbiviz">
-                        <i class="fas fa-download"></i> <span>Download .pbiviz</span>
+                    <a href="PersianCalendarPro.pbiviz" class="btn btn-download" download>
+                        <i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود فایل .pbiviz">Download .pbiviz</span>
                     </a>
-                    <a href="#tech" class="btn btn-outline" data-en="Documentation" data-fa="مستندات">
-                        <i class="fas fa-book"></i> <span>Documentation</span>
+                    <a href="#features" class="btn btn-outline" data-en="See Features" data-fa="مشاهده قابلیت‌ها">
+                        <i class="fas fa-list"></i> <span data-en="See Features" data-fa="مشاهده قابلیت‌ها">See Features</span>
                     </a>
                     <a href="https://github.com/mohamadfekri/PersianCalendarPro" target="_blank" class="btn btn-outline">
                         <i class="fab fa-github"></i> GitHub
@@ -590,75 +779,186 @@
                         <span class="day-name" data-en="Th" data-fa="پ">Th</span>
                         <span class="day-name" data-en="Fr" data-fa="ج">Fr</span>
                         <span class="day-name" data-en="Sa" data-fa="ش">Sa</span>
-                        <!-- Week 1 -->
                         <span class="day other">28</span><span class="day other">29</span><span class="day other">30</span>
                         <span class="day">1</span><span class="day">2</span><span class="day">3</span><span class="day">4</span>
-                        <!-- Week 2 -->
                         <span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span>
                         <span class="day">9</span><span class="day">10</span><span class="day">11</span>
-                        <!-- Week 3 -->
                         <span class="day">12</span><span class="day">13</span><span class="day">14</span><span class="day today">15</span>
                         <span class="day">16</span><span class="day holiday">17</span><span class="day">18</span>
-                        <!-- Week 4 -->
-                        <span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span>
+                        <span class="day">19</span><span class="day">20</span><span class="day selected">21</span><span class="day">22</span>
                         <span class="day">23</span><span class="day">24</span><span class="day">25</span>
-                        <!-- Week 5 -->
                         <span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day">29</span>
                         <span class="day">30</span><span class="day">31</span><span class="day other">1</span>
                     </div>
                     <div class="mockup-footer">
                         <span><i class="fas fa-star" style="color: #fbbf24;"></i> <span data-en="Today" data-fa="امروز">Today</span></span>
                         <span><i class="fas fa-calendar-check" style="color: #e53e3e;"></i> <span data-en="Holiday" data-fa="تعطیل">Holiday</span></span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> <span data-en="Selected" data-fa="انتخاب شده">Selected</span></span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Features -->
-    <section class="section">
+    <!-- Icon Display -->
+    <section class="section icon-section">
         <div class="container">
-            <h2 class="section-title" data-en="Why Persian Calendar Pro?" data-fa="چرا تقویم فارسی حرفه‌ای؟">Why Persian Calendar Pro?</h2>
-            <p class="section-sub" data-en="Built for the global Power BI community with full Jalali support, privacy-first, and modern design."
-               data-fa="ساخته شده برای جامعه جهانی پاور بی‌آی با پشتیبانی کامل از تقویم جلالی، حریم‌خصوصی‌محور و طراحی مدرن.">
-                Built for the global Power BI community with full Jalali support, privacy-first, and modern design.
-            </p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <h3 data-en="Jalali Calendar" data-fa="تقویم جلالی">Jalali Calendar</h3>
-                    <p data-en="Full Persian (Jalali) calendar with accurate date conversion and holiday support."
-                       data-fa="تقویم کامل فارسی (جلالی) با تبدیل تاریخ دقیق و پشتیبانی از تعطیلات.">Full Persian (Jalali) calendar with accurate date conversion and holiday support.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3 data-en="Privacy First" data-fa="حریم خصوصی اولویت اول">Privacy First</h3>
-                    <p data-en="No data collection, no tracking, no external calls. 100% compliant with enterprise policies."
-                       data-fa="بدون جمع‌آوری داده، بدون ردیابی، بدون تماس خارجی. ۱۰۰٪ مطابق با سیاست‌های سازمانی.">No data collection, no tracking, no external calls. 100% compliant with enterprise policies.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3 data-en="Modern UI" data-fa="رابط کاربری مدرن">Modern UI</h3>
-                    <p data-en="Responsive, clean, and configurable design that integrates seamlessly with Power BI."
-                       data-fa="طراحی واکنش‌گرا، تمیز و قابل تنظیم که به‌خوبی با پاور بی‌آی ادغام می‌شود.">Responsive, clean, and configurable design that integrates seamlessly with Power BI.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-code"></i></div>
-                    <h3 data-en="Open Source" data-fa="متن‌باز">Open Source</h3>
-                    <p data-en="Fully open-source with MIT license. Community contributions are welcome."
-                       data-fa="کاملاً متن‌باز با مجوز MIT. مشارکت جامعه پذیرفته می‌شود.">Fully open-source with MIT license. Community contributions are welcome.</p>
+            <div class="icon-display">
+                <img src="icon.png" alt="Persian Calendar Pro Icon" />
+                <div class="icon-info">
+                    <h3 data-en="Visual Icon" data-fa="آیکون ویژوال">Visual Icon</h3>
+                    <p data-en="Official icon for Persian Calendar Pro custom visual." data-fa="آیکون رسمی ویژوال سفارشی تقویم فارسی حرفه‌ای.">
+                        Official icon for Persian Calendar Pro custom visual.
+                    </p>
+                    <span class="badge" style="margin-top:8px; display:inline-block;">📐 300×300 PNG</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical / Files -->
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="container">
+            <span class="section-badge" data-en="✨ Key Features" data-fa="✨ قابلیت‌های کلیدی">✨ Key Features</span>
+            <h2 class="section-title" data-en="Everything You Need in a Jalali Calendar" data-fa="همه آنچه در یک تقویم جلالی نیاز دارید">
+                Everything You Need in a Jalali Calendar
+            </h2>
+            <p class="section-sub" data-en="The first and most complete Jalali calendar visual for Power BI. Designed for business and enterprise use."
+               data-fa="اولین و کامل‌ترین ویژوال تقویم جلالی برای پاور بی‌آی. طراحی شده برای استفاده‌های تجاری و سازمانی.">
+                The first and most complete Jalali calendar visual for Power BI. Designed for business and enterprise use.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3 data-en="Jalali Calendar" data-fa="تقویم جلالی">Jalali Calendar</h3>
+                    <p data-en="Full Persian (Jalali) calendar with accurate date conversion and holiday support." data-fa="تقویم کامل فارسی (جلالی) با تبدیل تاریخ دقیق و پشتیبانی از تعطیلات.">Full Persian (Jalali) calendar with accurate date conversion and holiday support.</p>
+                    <span class="feature-tag">📅 First of its kind</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-flag"></i></div>
+                    <h3 data-en="Persian Holidays" data-fa="تعطیلات شمسی">Persian Holidays</h3>
+                    <p data-en="Includes all official Iranian holidays and observances. Toggle on/off as needed." data-fa="شامل تمام تعطیلات رسمی و مناسبت‌های ایرانی. قابلیت فعال/غیرفعال‌سازی.">Includes all official Iranian holidays and observances. Toggle on/off as needed.</p>
+                    <span class="feature-tag">🇮🇷 20+ holidays</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-fire"></i></div>
+                    <h3 data-en="Heatmap View" data-fa="نمایش هیت‌مپ">Heatmap View</h3>
+                    <p data-en="Visualize data density with color-coded heatmap for months and years." data-fa="تجسم تراکم داده‌ها با هیت‌مپ رنگی برای ماه‌ها و سال‌ها.">Visualize data density with color-coded heatmap for months and years.</p>
+                    <span class="feature-tag">🎨 Color-coded</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-week"></i></div>
+                    <h3 data-en="Annual View" data-fa="نمایش سالانه">Annual View</h3>
+                    <p data-en="See the entire year at a glance with monthly and yearly calendar views." data-fa="مشاهده کل سال در یک نگاه با نمای ماهانه و سالانه.">See the entire year at a glance with monthly and yearly calendar views.</p>
+                    <span class="feature-tag">📆 12 months</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3 data-en="Year & Month Selection" data-fa="انتخاب سال و ماه">Year & Month Selection</h3>
+                    <p data-en="Easily navigate and select any year or month with intuitive controls." data-fa="به راحتی هر سال یا ماه را با کنترل‌های شهودی مرور و انتخاب کنید.">Easily navigate and select any year or month with intuitive controls.</p>
+                    <span class="feature-tag">🔄 Interactive</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3 data-en="Date Range Selection" data-fa="انتخاب بازه زمانی">Date Range Selection</h3>
+                    <p data-en="Select single dates, ranges, or multiple individual days. Flexible for any use case." data-fa="انتخاب تاریخ تکی، بازه‌ای یا روزهای جداگانه. منعطف برای هر کاربرد.">Select single dates, ranges, or multiple individual days. Flexible for any use case.</p>
+                    <span class="feature-tag">🎯 3 modes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Options Section -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <span class="section-badge">⚙️ Customization Options</span>
+            <h2 class="section-title" data-en="Fully Configurable" data-fa="کاملاً قابل تنظیم">Fully Configurable</h2>
+            <p class="section-sub" data-en="Tailor the calendar to your exact needs with these powerful options." data-fa="تقویم را با این گزینه‌های قدرتمند مطابق نیاز خود تنظیم کنید.">
+                Tailor the calendar to your exact needs with these powerful options.
+            </p>
+
+            <div class="options-grid">
+                <div class="option-item"><i class="fas fa-palette"></i> <span data-en="Custom colors" data-fa="رنگ‌های سفارشی">Custom colors</span></div>
+                <div class="option-item"><i class="fas fa-font"></i> <span data-en="Day size adjustment" data-fa="تنظیم سایز روزها">Day size adjustment</span></div>
+                <div class="option-item"><i class="fas fa-eye"></i> <span data-en="Show/hide holidays" data-fa="نمایش/عدم نمایش تعطیلات">Show/hide holidays</span></div>
+                <div class="option-item"><i class="fas fa-check-circle"></i> <span data-en="Single selection" data-fa="انتخاب تکی">Single selection</span></div>
+                <div class="option-item"><i class="fas fa-arrows-alt-h"></i> <span data-en="Range selection" data-fa="انتخاب بازه‌ای">Range selection</span></div>
+                <div class="option-item"><i class="fas fa-plus-circle"></i> <span data-en="Multiple individual days" data-fa="انتخاب روزهای جداگانه">Multiple individual days</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Images -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <span class="section-badge">📸 Screenshots</span>
+            <h2 class="section-title" data-en="See It in Action" data-fa="مشاهده در عمل">See It in Action</h2>
+            <p class="section-sub" data-en="Real examples of Persian Calendar Pro in Power BI reports." data-fa="نمونه‌های واقعی از تقویم فارسی حرفه‌ای در گزارش‌های پاور بی‌آی.">
+                Real examples of Persian Calendar Pro in Power BI reports.
+            </p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <img src="persiancalendar.png" alt="Persian Calendar Pro Demo" />
+                    <div class="demo-body">
+                        <h4 data-en="Calendar & Heatmap View" data-fa="نمایش تقویم و هیت‌مپ">Calendar & Heatmap View</h4>
+                        <p data-en="Monthly calendar with heatmap showing data intensity." data-fa="تقویم ماهانه با هیت‌مپ نمایش شدت داده‌ها.">Monthly calendar with heatmap showing data intensity.</p>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <img src="persiancalendar.png" alt="Annual View" />
+                    <div class="demo-body">
+                        <h4 data-en="Annual Calendar" data-fa="تقویم سالانه">Annual Calendar</h4>
+                        <p data-en="Full year view with all months displayed simultaneously." data-fa="نمایش کامل سال با تمام ماه‌ها به صورت همزمان.">Full year view with all months displayed simultaneously.</p>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <img src="persiancalendar.png" alt="Selection Modes" />
+                    <div class="demo-body">
+                        <h4 data-en="Selection Modes" data-fa="حالت‌های انتخاب">Selection Modes</h4>
+                        <p data-en="Single, range, and multi-select options for any scenario." data-fa="گزینه‌های انتخاب تکی، بازه‌ای و چندگانه برای هر سناریو.">Single, range, and multi-select options for any scenario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="download-section">
+                <h3 data-en="📦 Download Persian Calendar Pro" data-fa="📦 دانلود تقویم فارسی حرفه‌ای">📦 Download Persian Calendar Pro</h3>
+                <p data-en="Get the latest version. Compatible with Power BI Desktop and Power BI Service." data-fa="آخرین نسخه را دریافت کنید. سازگار با Power BI Desktop و Power BI Service.">
+                    Get the latest version. Compatible with Power BI Desktop and Power BI Service.
+                </p>
+                <div class="btn-group">
+                    <a href="PersianCalendarPro.pbiviz" class="btn btn-download" download>
+                        <i class="fas fa-file-archive"></i> <span data-en="Download .pbiviz (1.0.0.0)" data-fa="دانلود .pbiviz (۱.۰.۰.۰)">Download .pbiviz (1.0.0.0)</span>
+                    </a>
+                    <a href="#tech" class="btn btn-outline" data-en="Documentation" data-fa="مستندات">
+                        <i class="fas fa-book"></i> <span data-en="Documentation" data-fa="مستندات">Documentation</span>
+                    </a>
+                </div>
+                <p style="margin-top:16px; font-size:0.85rem; color:var(--gray-500);">
+                    <i class="fas fa-check-circle" style="color:#10b981;"></i>
+                    <span data-en="Version 1.0.0.0 | API 5.11.0 | 100% Privacy Compliant" data-fa="نسخه ۱.۰.۰.۰ | API ۵.۱۱.۰ | ۱۰۰٪ مطابق با حریم خصوصی">Version 1.0.0.0 | API 5.11.0 | 100% Privacy Compliant</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical -->
     <section class="section tech-section" id="tech">
         <div class="container">
             <h2 class="section-title" data-en="Technical Details" data-fa="جزئیات فنی">Technical Details</h2>
-            <p class="section-sub" data-en="All you need to know for installation, validation, and submission to Microsoft AppSource."
-               data-fa="هر آنچه برای نصب، اعتبارسنجی و ارسال به مایکروسافت AppSource نیاز دارید.">
-                All you need to know for installation, validation, and submission to Microsoft AppSource.
+            <p class="section-sub" data-en="Everything you need for installation, validation, and AppSource submission." data-fa="هر آنچه برای نصب، اعتبارسنجی و ارسال به AppSource نیاز دارید.">
+                Everything you need for installation, validation, and AppSource submission.
             </p>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:8px;">
@@ -690,6 +990,7 @@
                 <a href="#" class="file-item"><i class="fas fa-shield-alt"></i> privacy.md</a>
                 <a href="#" class="file-item"><i class="fas fa-headset"></i> support.md</a>
                 <a href="#" class="file-item"><i class="fas fa-history"></i> CHANGELOG.md</a>
+                <a href="PersianCalendarPro.pbiviz" class="file-item" download><i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود .pbiviz">Download .pbiviz</span></a>
             </div>
         </div>
     </section>
@@ -700,8 +1001,7 @@
             <div class="card-box">
                 <h3><i class="fas fa-lock"></i> <span data-en="Privacy Policy" data-fa="سیاست حریم خصوصی">Privacy Policy</span></h3>
                 <p><strong data-en="Last Updated:" data-fa="آخرین بروزرسانی:">Last Updated:</strong> July 2026</p>
-                <p data-en="Persian Calendar Pro does not collect, store, process, transmit, or share any personal or business data. The visual operates entirely within Microsoft Power BI and only uses the data provided by the report. No information is sent to external servers. No cookies, tracking, analytics, or advertising services are used."
-                   data-fa="Persian Calendar Pro هیچ داده شخصی یا تجاری را جمع‌آوری، ذخیره، پردازش، انتقال یا به اشتراک نمی‌گذارد. این ویژوال کاملاً در داخل مایکروسافت پاور بی‌آی کار می‌کند و فقط از داده‌های ارائه شده توسط گزارش استفاده می‌کند. هیچ اطلاعاتی به سرورهای خارجی ارسال نمی‌شود. هیچ کوکی، ردیابی، آنالیز یا خدمات تبلیغاتی استفاده نمی‌شود.">
+                <p data-en="Persian Calendar Pro does not collect, store, process, transmit, or share any personal or business data. The visual operates entirely within Microsoft Power BI and only uses the data provided by the report. No information is sent to external servers. No cookies, tracking, analytics, or advertising services are used." data-fa="Persian Calendar Pro هیچ داده شخصی یا تجاری را جمع‌آوری، ذخیره، پردازش، انتقال یا به اشتراک نمی‌گذارد. این ویژوال کاملاً در داخل مایکروسافت پاور بی‌آی کار می‌کند و فقط از داده‌های ارائه شده توسط گزارش استفاده می‌کند. هیچ اطلاعاتی به سرورهای خارجی ارسال نمی‌شود. هیچ کوکی، ردیابی، آنالیز یا خدمات تبلیغاتی استفاده نمی‌شود.">
                     Persian Calendar Pro does not collect, store, process, transmit, or share any personal or business data. The visual operates entirely within Microsoft Power BI and only uses the data provided by the report. No information is sent to external servers. No cookies, tracking, analytics, or advertising services are used.
                 </p>
                 <p style="margin-top:12px;"><strong data-en="Developer" data-fa="توسعه‌دهنده">Developer</strong>: Mohamad Hosein Fekri</p>
@@ -709,8 +1009,7 @@
 
             <div class="card-box">
                 <h3><i class="fas fa-headset"></i> <span data-en="Support" data-fa="پشتیبانی">Support</span></h3>
-                <p data-en="For bug reports, feature requests, or any issues, please contact the developer directly."
-                   data-fa="برای گزارش باگ، درخواست ویژگی یا هر مشکل دیگر، لطفاً مستقیماً با توسعه‌دهنده تماس بگیرید.">
+                <p data-en="For bug reports, feature requests, or any issues, please contact the developer directly." data-fa="برای گزارش باگ، درخواست ویژگی یا هر مشکل دیگر، لطفاً مستقیماً با توسعه‌دهنده تماس بگیرید.">
                     For bug reports, feature requests, or any issues, please contact the developer directly.
                 </p>
                 <ul>
@@ -740,35 +1039,22 @@
     </footer>
 
     <script>
-        // ---- Language Toggle ----
+        // Language Toggle
         const langBtns = document.querySelectorAll('.lang-btn');
-        const root = document.documentElement;
         const body = document.body;
-
-        // All translatable elements: data-en and data-fa
         const translatables = document.querySelectorAll('[data-en][data-fa]');
 
         function setLanguage(lang) {
-            // Update active button
             langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-
-            // Set dir attribute
             body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
 
-            // Update text content for elements with data-en / data-fa
             translatables.forEach(el => {
                 const text = el.dataset[lang];
                 if (text) {
-                    // If the element has inner HTML (like <span>), we need to set innerHTML
-                    // but only if it's safe (no user input). We'll use innerHTML.
                     el.innerHTML = text;
                 }
             });
 
-            // Special case for the hero h1 and other nested elements
-            // The hero h1 has data-en and data-fa with <span> inside.
-            // We already handle it via innerHTML above, but we need to ensure it works.
-            // Also update placeholder for download button and other buttons with span inside.
             document.querySelectorAll('.btn[data-en][data-fa]').forEach(btn => {
                 const span = btn.querySelector('span');
                 if (span) {
@@ -778,46 +1064,38 @@
                 }
             });
 
-            // Update any element that might have mixed content
-            // For mockup header month
             const monthEl = document.querySelector('.mockup-header .month');
             if (monthEl) {
                 monthEl.textContent = monthEl.dataset[lang] || monthEl.textContent;
             }
 
-            // Update day names in mockup (they have data-en and data-fa)
             document.querySelectorAll('.mockup-grid .day-name').forEach(el => {
                 el.textContent = el.dataset[lang] || el.textContent;
             });
 
-            // Update footer labels
             document.querySelectorAll('.mockup-footer span[data-en][data-fa]').forEach(el => {
                 el.textContent = el.dataset[lang] || el.textContent;
             });
 
-            // For the support list items (they have data-en/data-fa)
             document.querySelectorAll('.card-box ul li[data-en][data-fa]').forEach(el => {
                 el.textContent = el.dataset[lang] || el.textContent;
             });
 
-            // Save preference
             localStorage.setItem('preferredLang', lang);
         }
 
-        // Event listeners
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 setLanguage(btn.dataset.lang);
             });
         });
 
-        // Load saved language preference
         const savedLang = localStorage.getItem('preferredLang') || 'en';
         setLanguage(savedLang);
 
-        // ---- Smooth scroll for anchor links ----
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
@@ -825,10 +1103,6 @@
                 }
             });
         });
-
-        // ---- Dynamic year (optional) ----
-        // Not needed for mockup, but we could update the footer year if needed.
-        // Already static.
     </script>
 
 </body>
