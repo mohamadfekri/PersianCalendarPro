@@ -92,9 +92,30 @@
             background: var(--gray-100);
         }
 
+        /* Version Banner */
+        .version-banner {
+            background: linear-gradient(135deg, #1a5cff, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .version-banner a {
+            color: #fcd34d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .version-banner a:hover {
+            text-decoration: underline;
+        }
+
         /* Hero */
         .hero {
-            padding: 80px 0 64px;
+            padding: 64px 0 56px;
             background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
             border-bottom: 1px solid var(--gray-200);
         }
@@ -112,7 +133,7 @@
             line-height: 1.15;
             letter-spacing: -0.02em;
             color: var(--gray-900);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .hero-content h1 span {
@@ -122,15 +143,15 @@
         .hero-sub {
             font-size: 1.2rem;
             color: var(--gray-600);
-            max-width: 480px;
-            margin-bottom: 32px;
+            max-width: 520px;
+            margin-bottom: 24px;
         }
 
         .hero-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 32px;
+            gap: 10px;
+            margin-bottom: 28px;
         }
 
         .badge {
@@ -138,7 +159,7 @@
             color: var(--primary-dark);
             padding: 4px 16px;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
         }
 
@@ -152,10 +173,20 @@
             color: #92400e;
         }
 
+        .badge-purple {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .badge-version {
+            background: var(--gray-900);
+            color: white;
+        }
+
         .btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 14px;
         }
 
         .btn {
@@ -210,7 +241,6 @@
         .btn-youtube {
             background: #ff0000;
             color: white;
-            border-color: #ff0000;
         }
 
         .btn-youtube:hover {
@@ -225,7 +255,7 @@
         }
 
         .mockup-card {
-            background: var(--white);
+            background: #0f172a;
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
             padding: 12px;
@@ -233,12 +263,11 @@
             max-width: 480px;
             border: 1px solid var(--gray-200);
             transition: var(--transition);
-            background: #0f172a;
         }
 
         .mockup-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         .mockup-card video {
@@ -305,6 +334,78 @@
             font-weight: 600;
             margin-bottom: 12px;
             letter-spacing: 0.02em;
+        }
+
+        /* What's New - Hero Section */
+        .new-hero-section {
+            background: linear-gradient(145deg, #f0f4ff 0%, var(--white) 100%);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .new-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .new-hero-card {
+            background: var(--white);
+            padding: 28px 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .new-hero-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .new-hero-card .icon-big {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .new-hero-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .new-hero-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .new-hero-card .tag {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .new-hero-card.green {
+            border-top-color: #10b981;
+        }
+        .new-hero-card.green .icon-big {
+            color: #10b981;
+        }
+
+        .new-hero-card.purple {
+            border-top-color: #7c3aed;
+        }
+        .new-hero-card.purple .icon-big {
+            color: #7c3aed;
         }
 
         /* Features Grid */
@@ -509,51 +610,6 @@
             margin-left: auto;
         }
 
-        /* What's New Section */
-        .new-section {
-            background: linear-gradient(145deg, #fffbeb 0%, var(--white) 100%);
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .new-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-            margin-top: 32px;
-        }
-
-        .new-item {
-            background: var(--white);
-            padding: 24px;
-            border-radius: var(--radius);
-            border: 1px solid var(--gray-200);
-            border-left: 4px solid #f59e0b;
-            transition: var(--transition);
-        }
-
-        .new-item:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .new-item .new-icon {
-            font-size: 1.8rem;
-            color: #f59e0b;
-            margin-bottom: 8px;
-        }
-
-        .new-item h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .new-item p {
-            color: var(--gray-600);
-            font-size: 0.9rem;
-        }
-
         /* Download Section */
         .download-section {
             background: linear-gradient(145deg, var(--primary-light) 0%, var(--white) 100%);
@@ -708,6 +764,75 @@
             color: var(--primary);
         }
 
+        /* Changelog */
+        .changelog-list {
+            margin-top: 16px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .changelog-item {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .changelog-item:last-child {
+            border-bottom: none;
+        }
+
+        .changelog-item .version-tag {
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .changelog-item .change-content {
+            flex: 1;
+        }
+
+        .changelog-item .change-content .change-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .changelog-item .change-content .change-desc {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .changelog-item .change-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .change-type.feature {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .change-type.improvement {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .change-type.fix {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
         /* Responsive */
         body[dir="rtl"] {
             direction: rtl;
@@ -753,6 +878,9 @@
             .demo-grid {
                 grid-template-columns: 1fr;
             }
+            .new-hero-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
@@ -790,13 +918,13 @@
             .demo-image-wrapper {
                 height: 180px;
             }
-            .new-grid {
-                grid-template-columns: 1fr;
-            }
             .footer {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+            .changelog-item {
+                flex-wrap: wrap;
             }
         }
 
@@ -809,9 +937,23 @@
         .mb-8 {
             margin-bottom: 8px;
         }
+
+        .badge-download {
+            background: #10b981;
+            color: white;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Version Banner -->
+    <div class="version-banner">
+        🎉 <strong data-en="Version 1.0.1 is here!" data-fa="نسخه ۱.۱.۰ منتشر شد!">Version 1.0.1 is here!</strong>
+        <span data-en="Now with" data-fa="اکنون با">Now with</span>
+        <strong data-en="Collapsible Calendar" data-fa="تقویم جمع‌شونده">Collapsible Calendar</strong> +
+        <strong data-en="Date Input Size Control" data-fa="کنترل سایز ورودی تاریخ">Date Input Size Control</strong> 🚀
+        <a href="#whatsnew" data-en="See what's new →" data-fa="مشاهده تغییرات →">See what's new →</a>
+    </div>
 
     <!-- Language Toggle -->
     <div class="lang-toggle" role="group" aria-label="Language toggle">
@@ -833,15 +975,16 @@
 
                 <div class="hero-badges">
                     <span class="badge">✅ First Jalali Calendar on Power BI</span>
-                    <span class="badge">📦 v1.0.0.0</span>
+                    <span class="badge badge-version">📦 v1.0.1.0</span>
                     <span class="badge badge-success">🔒 100% Privacy</span>
                     <span class="badge">🌐 API 5.11</span>
-                    <span class="badge badge-new">✨ New Features Added!</span>
+                    <span class="badge badge-new">✨ New: Collapsible Calendar</span>
+                    <span class="badge badge-purple">📏 Date Input Size Control</span>
                 </div>
 
                 <div class="btn-group">
-                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download onclick="goatcounter.count({event: true, path: '/download'})">
-                        <i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود فایل .pbiviz">Download .pbiviz</span>
+                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.1.0.pbiviz" class="btn btn-download" download onclick="goatcounter.count({event: true, path: '/download'})">
+                        <i class="fas fa-download"></i> <span data-en="Download v1.0.1" data-fa="دانلود نسخه ۱.۰.۱">Download v1.0.1</span>
                     </a>
                     <a href="#features" class="btn btn-outline" data-en="See Features" data-fa="مشاهده قابلیت‌ها">
                         <i class="fas fa-list"></i> <span data-en="See Features" data-fa="مشاهده قابلیت‌ها">See Features</span>
@@ -855,7 +998,6 @@
                 </div>
             </div>
 
-            <!-- ===== فیلم به جای عکس ===== -->
             <div class="hero-visual">
                 <div class="mockup-card">
                     <video 
@@ -880,41 +1022,94 @@
         </div>
     </header>
 
-    <!-- ===== WHAT'S NEW SECTION ===== -->
-    <section class="section new-section" id="whatsnew">
+    <!-- ===== WHAT'S NEW - HERO CARDS ===== -->
+    <section class="section new-hero-section" id="whatsnew">
         <div class="container">
-            <span class="section-badge">🚀 What's New</span>
-            <h2 class="section-title" data-en="New Features in v1.0.0" data-fa="قابلیت‌های جدید در نسخه ۱.۰.۰">New Features in v1.0.0</h2>
-            <p class="section-sub" data-en="The latest update brings powerful new ways to interact with your data." data-fa="آخرین به‌روزرسانی روش‌های قدرتمند جدیدی برای تعامل با داده‌های شما به ارمغان می‌آورد.">
-                The latest update brings powerful new ways to interact with your data.
+            <span class="section-badge">🚀 What's New in v1.0.1</span>
+            <h2 class="section-title" data-en="New Features" data-fa="قابلیت‌های جدید">New Features</h2>
+            <p class="section-sub" data-en="Two powerful new features to make your calendar even more flexible." data-fa="دو قابلیت قدرتمند جدید برای انعطاف‌پذیری بیشتر تقویم شما.">
+                Two powerful new features to make your calendar even more flexible.
             </p>
 
-            <div class="new-grid">
-                <div class="new-item">
-                    <div class="new-icon"><i class="fas fa-calendar-week"></i></div>
-                    <h4 data-en="📅 Date Range Selection" data-fa="📅 انتخاب بازه زمانی">📅 Date Range Selection</h4>
-                    <p data-en="Quick-select Today, This Week, This Month, This Quarter, or This Year with one click." data-fa="انتخاب سریع امروز، این هفته، این ماه، این فصل یا امسال با یک کلیک.">
-                        Quick-select Today, This Week, This Month, This Quarter, or This Year with one click.
+            <div class="new-hero-grid">
+                <div class="new-hero-card">
+                    <span class="icon-big">📐</span>
+                    <h3 data-en="Collapsible Calendar" data-fa="تقویم جمع‌شونده">Collapsible Calendar</h3>
+                    <p data-en="Hide the calendar grid with one click. Perfect for small spaces or focused data views." data-fa="مخفی کردن گرید تقویم با یک کلیک. ایده‌آل برای فضاهای کوچک یا نمای متمرکز داده.">
+                        Hide the calendar grid with one click. Perfect for small spaces or focused data views.
                     </p>
-                    <span class="feature-tag-new">✨ New</span>
+                    <span class="tag">✨ New Feature</span>
                 </div>
 
-                <div class="new-item">
-                    <div class="new-icon"><i class="fas fa-sort-numeric-up"></i></div>
-                    <h4 data-en="🔢 Selected Days Count" data-fa="🔢 تعداد روزهای انتخاب شده">🔢 Selected Days Count</h4>
-                    <p data-en="Display the number of selected days at the bottom of the calendar. Toggle on/off in settings." data-fa="نمایش تعداد روزهای انتخاب شده در پایین تقویم. فعال/غیرفعال در تنظیمات.">
-                        Display the number of selected days at the bottom of the calendar. Toggle on/off in settings.
+                <div class="new-hero-card green">
+                    <span class="icon-big">📏</span>
+                    <h3 data-en="Date Input Size Control" data-fa="کنترل سایز ورودی تاریخ">Date Input Size Control</h3>
+                    <p data-en="Adjust the font size of date input boxes independently. Customize for your report layout." data-fa="تنظیم سایز فونت جعبه‌های ورودی تاریخ به طور مستقل. سفارشی‌سازی برای چیدمان گزارش شما.">
+                        Adjust the font size of date input boxes independently. Customize for your report layout.
                     </p>
-                    <span class="feature-tag-new">✨ New</span>
+                    <span class="tag">✨ New Feature</span>
                 </div>
 
-                <div class="new-item">
-                    <div class="new-icon"><i class="fas fa-eraser"></i></div>
-                    <h4 data-en="🧹 Clear Filters" data-fa="🧹 پاک کردن فیلترها">🧹 Clear Filters</h4>
-                    <p data-en="One-click clear filter button (✕) next to date inputs. Resets all selections instantly." data-fa="دکمه پاک کردن فیلتر (✕) با یک کلیک در کنار ورودی‌های تاریخ. همه انتخاب‌ها را فوراً بازنشانی می‌کند.">
-                        One-click clear filter button (✕) next to date inputs. Resets all selections instantly.
+                <div class="new-hero-card purple">
+                    <span class="icon-big">⚡</span>
+                    <h3 data-en="Better UX" data-fa="تجربه کاربری بهتر">Better UX</h3>
+                    <p data-en="Combined with existing features like Date Range Quick-Select, Selected Count, and Clear Filters." data-fa="ترکیب با قابلیت‌های موجود مانند انتخاب سریع بازه، تعداد انتخاب و پاک کردن فیلتر.">
+                        Combined with existing features like Date Range Quick-Select, Selected Count, and Clear Filters.
                     </p>
-                    <span class="feature-tag-new">✨ New</span>
+                    <span class="tag">🚀 Enhanced</span>
+                </div>
+            </div>
+
+            <!-- ===== Changelog ===== -->
+            <div style="margin-top: 40px;">
+                <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:12px;">
+                    <i class="fas fa-history" style="color:var(--primary);"></i>
+                    <span data-en="Changelog" data-fa="تاریخچه تغییرات">Changelog</span>
+                </h3>
+                <div class="changelog-list">
+                    <div class="changelog-item">
+                        <span class="version-tag">v1.0.1</span>
+                        <div class="change-content">
+                            <div class="change-title" data-en="📐 Collapsible Calendar" data-fa="📐 تقویم جمع‌شونده">📐 Collapsible Calendar</div>
+                            <div class="change-desc" data-en="Hide the entire calendar grid with one click. The date inputs and navigation remain visible. Toggle collapses/expands the calendar body." data-fa="مخفی کردن کل گرید تقویم با یک کلیک. ورودی‌های تاریخ و ناوبری باقی می‌مانند. دکمه جمع/باز کردن بدنه تقویم.">
+                                Hide the entire calendar grid with one click. The date inputs and navigation remain visible. Toggle collapses/expands the calendar body.
+                            </div>
+                        </div>
+                        <span class="change-type feature">New Feature</span>
+                    </div>
+
+                    <div class="changelog-item">
+                        <span class="version-tag">v1.0.1</span>
+                        <div class="change-content">
+                            <div class="change-title" data-en="📏 Date Input Text Size Control" data-fa="📏 کنترل سایز متن ورودی تاریخ">📏 Date Input Text Size Control</div>
+                            <div class="change-desc" data-en="New setting in the Calendar card to independently control the font size of date input boxes. Responsive scaling with a maximum limit to prevent oversized inputs." data-fa="تنظیم جدید در بخش Calendar برای کنترل مستقل سایز فونت جعبه‌های ورودی تاریخ. اسکیل ریسپانسیو با محدودیت حداکثر برای جلوگیری از بزرگ‌شدن بیش از حد.">
+                                New setting in the Calendar card to independently control the font size of date input boxes. Responsive scaling with a maximum limit to prevent oversized inputs.
+                            </div>
+                        </div>
+                        <span class="change-type feature">New Feature</span>
+                    </div>
+
+                    <div class="changelog-item">
+                        <span class="version-tag">v1.0.1</span>
+                        <div class="change-content">
+                            <div class="change-title" data-en="🔧 Improved Date Input Responsiveness" data-fa="🔧 بهبود ریسپانسیو بودن ورودی تاریخ">🔧 Improved Date Input Responsiveness</div>
+                            <div class="change-desc" data-en="Date input boxes now use min-width/max-width instead of fixed 'ch' units. Text overflow is handled with ellipsis. Max 10 characters limit added." data-fa="جعبه‌های ورودی تاریخ اکنون از min-width/max-width به جای واحدهای ثابت 'ch' استفاده می‌کنند. سرریز متن با ellipsis مدیریت می‌شود. محدودیت حداکثر ۱۰ کاراکتر اضافه شد.">
+                                Date input boxes now use min-width/max-width instead of fixed 'ch' units. Text overflow is handled with ellipsis. Max 10 characters limit added.
+                            </div>
+                        </div>
+                        <span class="change-type improvement">Improvement</span>
+                    </div>
+
+                    <div class="changelog-item">
+                        <span class="version-tag">v1.0.0</span>
+                        <div class="change-content">
+                            <div class="change-title" data-en="📅 Initial Release" data-fa="📅 انتشار اولیه">📅 Initial Release</div>
+                            <div class="change-desc" data-en="First Jalali calendar custom visual for Power BI with monthly grid, yearly heatmap, Persian holidays, and selection modes." data-fa="اولین ویژوال تقویم جلالی برای پاور بی‌آی با گرید ماهانه، هیت‌مپ سالانه، تعطیلات فارسی و حالت‌های انتخاب.">
+                                First Jalali calendar custom visual for Power BI with monthly grid, yearly heatmap, Persian holidays, and selection modes.
+                            </div>
+                        </div>
+                        <span class="change-type feature">Initial Release</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -990,6 +1185,20 @@
                     <p data-en="Select single dates, ranges, or multiple individual days. Flexible for any use case." data-fa="انتخاب تاریخ تکی، بازه‌ای یا روزهای جداگانه. منعطف برای هر کاربرد.">Select single dates, ranges, or multiple individual days. Flexible for any use case.</p>
                     <span class="feature-tag-new">✨ New</span>
                 </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-compress-alt"></i></div>
+                    <h3 data-en="Collapsible Calendar" data-fa="تقویم جمع‌شونده">Collapsible Calendar</h3>
+                    <p data-en="Hide the calendar grid with one click. Saves space when you only need the date inputs." data-fa="مخفی کردن گرید تقویم با یک کلیک. صرفه‌جویی در فضا وقتی فقط به ورودی‌های تاریخ نیاز دارید.">Hide the calendar grid with one click. Saves space when you only need the date inputs.</p>
+                    <span class="feature-tag-new">✨ v1.0.1</span>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-font"></i></div>
+                    <h3 data-en="Date Input Size Control" data-fa="کنترل سایز ورودی تاریخ">Date Input Size Control</h3>
+                    <p data-en="Adjust the font size of date inputs independently. Perfect for small or large reports." data-fa="تنظیم سایز فونت ورودی‌های تاریخ به طور مستقل. عالی برای گزارش‌های کوچک یا بزرگ.">Adjust the font size of date inputs independently. Perfect for small or large reports.</p>
+                    <span class="feature-tag-new">✨ v1.0.1</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1006,6 +1215,7 @@
             <div class="options-grid">
                 <div class="option-item"><i class="fas fa-palette"></i> <span data-en="Custom colors" data-fa="رنگ‌های سفارشی">Custom colors</span></div>
                 <div class="option-item"><i class="fas fa-font"></i> <span data-en="Day size adjustment" data-fa="تنظیم سایز روزها">Day size adjustment</span></div>
+                <div class="option-item"><i class="fas fa-font"></i> <span data-en="Date input text size" data-fa="سایز متن ورودی تاریخ">Date input text size</span> <span class="new-tag">NEW</span></div>
                 <div class="option-item"><i class="fas fa-eye"></i> <span data-en="Show/hide holidays" data-fa="نمایش/عدم نمایش تعطیلات">Show/hide holidays</span></div>
                 <div class="option-item"><i class="fas fa-check-circle"></i> <span data-en="Single selection" data-fa="انتخاب تکی">Single selection</span></div>
                 <div class="option-item"><i class="fas fa-arrows-alt-h"></i> <span data-en="Range selection" data-fa="انتخاب بازه‌ای">Range selection</span></div>
@@ -1013,6 +1223,7 @@
                 <div class="option-item"><i class="fas fa-calendar-week"></i> <span data-en="Date Range Quick-Select" data-fa="انتخاب سریع بازه زمانی">Date Range Quick-Select</span> <span class="new-tag">NEW</span></div>
                 <div class="option-item"><i class="fas fa-sort-numeric-up"></i> <span data-en="Selected Days Count" data-fa="تعداد روزهای انتخاب شده">Selected Days Count</span> <span class="new-tag">NEW</span></div>
                 <div class="option-item"><i class="fas fa-eraser"></i> <span data-en="Clear Filters (✕)" data-fa="پاک کردن فیلترها (✕)">Clear Filters (✕)</span> <span class="new-tag">NEW</span></div>
+                <div class="option-item"><i class="fas fa-compress-alt"></i> <span data-en="Collapsible Calendar" data-fa="تقویم جمع‌شونده">Collapsible Calendar</span> <span class="new-tag">NEW</span></div>
             </div>
         </div>
     </section>
@@ -1094,14 +1305,14 @@
 
                 <div class="demo-card">
                     <div class="demo-image-wrapper">
-                        <img src="ClearFilter.png" alt="Clear Filter" />
+                        <img src="CollapsedView.png" alt="Collapsed Calendar" />
                     </div>
                     <div class="demo-body">
-                        <h4 data-en="🧹 Clear Filters" data-fa="🧹 پاک کردن فیلترها">🧹 Clear Filters</h4>
-                        <p data-en="One-click clear filter button (✕) next to date inputs. Resets all selections instantly." data-fa="دکمه پاک کردن فیلتر (✕) با یک کلیک در کنار ورودی‌های تاریخ.">
-                            One-click clear filter button (✕) next to date inputs. Resets all selections instantly.
+                        <h4 data-en="📐 Collapsed Calendar" data-fa="📐 تقویم جمع‌شده">📐 Collapsed Calendar</h4>
+                        <p data-en="Hide the calendar grid with one click. Perfect for saving space in your report." data-fa="مخفی کردن گرید تقویم با یک کلیک. عالی برای صرفه‌جویی در فضای گزارش.">
+                            Hide the calendar grid with one click. Perfect for saving space in your report.
                         </p>
-                        <span class="feature-tag-new">✨ New Feature</span>
+                        <span class="feature-tag-new">✨ v1.0.1</span>
                     </div>
                 </div>
             </div>
@@ -1117,8 +1328,8 @@
                     Get the latest version. Compatible with Power BI Desktop and Power BI Service.
                 </p>
                 <div class="btn-group">
-                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download onclick="goatcounter.count({event: true, path: '/download'})">
-                        <i class="fas fa-file-archive"></i> <span data-en="Download .pbiviz (1.0.0.0)" data-fa="دانلود .pbiviz (۱.۰.۰.۰)">Download .pbiviz (1.0.0.0)</span>
+                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.1.0.pbiviz" class="btn btn-download" download onclick="goatcounter.count({event: true, path: '/download'})">
+                        <i class="fas fa-file-archive"></i> <span data-en="Download .pbiviz (1.0.1.0)" data-fa="دانلود .pbiviz (۱.۰.۱.۰)">Download .pbiviz (1.0.1.0)</span>
                     </a>
                     <a href="#tech" class="btn btn-outline" data-en="Documentation" data-fa="مستندات">
                         <i class="fas fa-book"></i> <span data-en="Documentation" data-fa="مستندات">Documentation</span>
@@ -1126,11 +1337,11 @@
                 </div>
                 <p style="margin-top:16px; font-size:0.85rem; color:var(--gray-500);">
                     <i class="fas fa-check-circle" style="color:#10b981;"></i>
-                    <span data-en="Version 1.0.0.0 | API 5.11.0 | 100% Privacy Compliant" data-fa="نسخه ۱.۰.۰.۰ | API ۵.۱۱.۰ | ۱۰۰٪ مطابق با حریم خصوصی">Version 1.0.0.0 | API 5.11.0 | 100% Privacy Compliant</span>
+                    <span data-en="Version 1.0.1.0 | API 5.11.0 | 100% Privacy Compliant" data-fa="نسخه ۱.۱.۰.۰ | API ۵.۱۱.۰ | ۱۰۰٪ مطابق با حریم خصوصی">Version 1.0.1.0 | API 5.11.0 | 100% Privacy Compliant</span>
                 </p>
                 <p style="margin-top:8px; font-size:0.85rem; color:var(--gray-500);">
                     <i class="fas fa-star" style="color:#f59e0b;"></i>
-                    <span data-en="✨ New: Date Range Quick-Select + Selected Days Count + Clear Filters" data-fa="✨ جدید: انتخاب سریع بازه زمانی + تعداد روزهای انتخاب شده + پاک کردن فیلترها">✨ New: Date Range Quick-Select + Selected Days Count + Clear Filters</span>
+                    <span data-en="✨ New: Collapsible Calendar + Date Input Size Control" data-fa="✨ جدید: تقویم جمع‌شونده + کنترل سایز ورودی تاریخ">✨ New: Collapsible Calendar + Date Input Size Control</span>
                 </p>
             </div>
         </div>
@@ -1140,13 +1351,13 @@
     <section class="section tech-section" id="tech">
         <div class="container">
             <h2 class="section-title" data-en="Technical Details" data-fa="جزئیات فنی">Technical Details</h2>
-            </p>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:8px;">
                 <div>
                     <h4 style="font-weight:600; margin-bottom:8px;"><i class="fas fa-cube" style="color:var(--primary);"></i> <span data-en="Package" data-fa="بسته">Package</span></h4>
                     <ul style="list-style:none; color:var(--gray-600);">
                         <li>✅ <span data-en="Visual Name" data-fa="نام ویژوال">Visual Name</span>: Persian Calendar Pro</li>
+                        <li>✅ <span data-en="Version" data-fa="نسخه">Version</span>: <strong>1.0.1.0</strong></li>
                         <li>✅ <span data-en="GUID" data-fa="شناسه یکتا">GUID</span>: <code style="background:var(--gray-100);padding:2px 8px;border-radius:4px;">persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F</code></li>
                         <li>✅ <span data-en="API Version" data-fa="نسخه API">API Version</span>: 5.11.0</li>
                         <li>✅ <span data-en="Author" data-fa="نویسنده">Author</span>: Mohamad Hosein Fekri</li>
@@ -1171,7 +1382,7 @@
                 <a href="#" class="file-item"><i class="fas fa-shield-alt"></i> privacy.md</a>
                 <a href="#" class="file-item"><i class="fas fa-headset"></i> support.md</a>
                 <a href="#" class="file-item"><i class="fas fa-history"></i> CHANGELOG.md</a>
-                <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="file-item" download onclick="goatcounter.count({event: true, path: '/download'})"><i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود .pbiviz">Download .pbiviz</span></a>
+                <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.1.0.pbiviz" class="file-item" download onclick="goatcounter.count({event: true, path: '/download'})"><i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود .pbiviz">Download .pbiviz</span></a>
             </div>
         </div>
     </section>
@@ -1188,28 +1399,28 @@
                 <p style="margin-top:12px;"><strong data-en="Developer" data-fa="توسعه‌دهنده">Developer</strong>: Mohamad Hosein Fekri</p>
             </div>
 
-        <div class="card-box">
-            <h3><i class="fas fa-headset"></i> <span data-en="Support" data-fa="پشتیبانی">Support</span></h3>
-            <p data-en="For bug reports, feature requests, or any issues, please contact the developer directly." data-fa="برای گزارش باگ، درخواست ویژگی یا هر مشکل دیگر، لطفاً مستقیماً با توسعه‌دهنده تماس بگیرید.">
-                For bug reports, feature requests, or any issues, please contact the developer directly.
-            </p>
-            <ul>
-                <li data-en="Installation & Compatibility" data-fa="نصب و سازگاری">Installation & Compatibility</li>
-                <li data-en="Bug Reports" data-fa="گزارش باگ">Bug Reports</li>
-                <li data-en="Feature Requests" data-fa="درخواست ویژگی">Feature Requests</li>
-                <li data-en="Performance Issues" data-fa="مشکلات عملکرد">Performance Issues</li>
-            </ul>
-            <a href="mailto:mohamadfekri@gmail.com" class="support-email">
-                <i class="fas fa-envelope"></i> mohamadfekri@gmail.com
-            </a>
-            <br>
-            <a href="https://www.linkedin.com/in/mohamad-hosein-fekri" target="_blank" class="support-email" style="margin-top:8px;">
-                <i class="fab fa-linkedin"></i> LinkedIn: Mohamad Hosein Fekri
-            </a>
-            <p style="margin-top:8px; font-size:0.9rem; color:var(--gray-500);">
-                <span data-en="Response time:" data-fa="زمان پاسخگویی:">Response time:</span> 2–5 business days
-            </p>
-        </div>
+            <div class="card-box">
+                <h3><i class="fas fa-headset"></i> <span data-en="Support" data-fa="پشتیبانی">Support</span></h3>
+                <p data-en="For bug reports, feature requests, or any issues, please contact the developer directly." data-fa="برای گزارش باگ، درخواست ویژگی یا هر مشکل دیگر، لطفاً مستقیماً با توسعه‌دهنده تماس بگیرید.">
+                    For bug reports, feature requests, or any issues, please contact the developer directly.
+                </p>
+                <ul>
+                    <li data-en="Installation & Compatibility" data-fa="نصب و سازگاری">Installation & Compatibility</li>
+                    <li data-en="Bug Reports" data-fa="گزارش باگ">Bug Reports</li>
+                    <li data-en="Feature Requests" data-fa="درخواست ویژگی">Feature Requests</li>
+                    <li data-en="Performance Issues" data-fa="مشکلات عملکرد">Performance Issues</li>
+                </ul>
+                <a href="mailto:mohamadfekri@gmail.com" class="support-email">
+                    <i class="fas fa-envelope"></i> mohamadfekri@gmail.com
+                </a>
+                <br>
+                <a href="https://www.linkedin.com/in/mohamad-hosein-fekri" target="_blank" class="support-email" style="margin-top:8px;">
+                    <i class="fab fa-linkedin"></i> LinkedIn: Mohamad Hosein Fekri
+                </a>
+                <p style="margin-top:8px; font-size:0.9rem; color:var(--gray-500);">
+                    <span data-en="Response time:" data-fa="زمان پاسخگویی:">Response time:</span> 2–5 business days
+                </p>
+            </div>
         </div>
     </section>
 
@@ -1263,21 +1474,6 @@
                 }
             });
 
-            const monthEl = document.querySelector('.mockup-header .month');
-            if (monthEl && monthEl.dataset[lang]) {
-                monthEl.textContent = monthEl.dataset[lang];
-            }
-
-            document.querySelectorAll('.mockup-grid .day-name').forEach(el => {
-                if (el.dataset[lang]) {
-                    el.textContent = el.dataset[lang];
-                }
-            });
-
-            document.querySelectorAll('.footer span[data-en][data-fa]').forEach(el => {
-                el.textContent = el.dataset[lang];
-            });
-
             localStorage.setItem('preferredLang', lang);
         }
 
@@ -1301,61 +1497,29 @@
             });
         });
     </script>
+
+    <!-- ===== Download Counter ===== -->
     <script>
-    <script>
-        function updateDownloadCount() {
+        document.addEventListener('DOMContentLoaded', function() {
             const countElement = document.getElementById('download-count');
             if (!countElement) return;
-    
-            // دریافت تعداد از localStorage، اگر نبود از ۲۰ شروع کن
+
             let count = parseInt(localStorage.getItem('persian_calendar_downloads'));
             if (isNaN(count) || count < 20) {
                 count = 20;
                 localStorage.setItem('persian_calendar_downloads', count.toString());
             }
-    
+
             countElement.textContent = count.toLocaleString();
-    
-            // ثبت کلیک روی دکمه‌های دانلود
+
             document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.addEventListener('click', function() {
                     let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '20') + 1;
                     localStorage.setItem('persian_calendar_downloads', newCount.toString());
-                    const countEl = document.getElementById('download-count');
-                    if (countEl) countEl.textContent = newCount.toLocaleString();
+                    countElement.textContent = newCount.toLocaleString();
                 });
             });
-        }
-    
-        document.addEventListener('DOMContentLoaded', updateDownloadCount);
-    </script>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const countElement = document.getElementById('download-count');
-        if (!countElement) {
-            console.warn('Element #download-count not found!');
-            return;
-        }
-
-        // دریافت مقدار از localStorage، اگر نبود از ۲۰ شروع کن
-        let count = parseInt(localStorage.getItem('persian_calendar_downloads'));
-        if (isNaN(count) || count < 20) {
-            count = 20;
-            localStorage.setItem('persian_calendar_downloads', count.toString());
-        }
-
-        countElement.textContent = count.toLocaleString();
-
-        // ثبت کلیک روی دکمه‌های دانلود
-        document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '20') + 1;
-                localStorage.setItem('persian_calendar_downloads', newCount.toString());
-                countElement.textContent = newCount.toLocaleString();
-            });
         });
-    });
     </script>
 </body>
 </html>
