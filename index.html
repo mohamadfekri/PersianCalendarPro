@@ -1254,82 +1254,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="container footer">
-        <span>© 2026 <a href="https://mohamadfekri.github.io" target="_blank">Mohamad Hosein Fekri</a>. <span data-en="All rights reserved." data-fa="تمامی حقوق محفوظ است.">All rights reserved.</span></span>
-        <div class="footer-stats">
-            <span>
-                <i class="fas fa-eye"></i>
-                <span data-en="Visits:" data-fa="بازدید:">Visits:</span>
-                <span id="visit-count">...</span>
-            </span>
-            <span>
-                <i class="fas fa-download"></i>
-                <span data-en="Downloads:" data-fa="دانلود:">Downloads:</span>
-                <span id="download-count">0</span>
-            </span>
-        </div>
-    </footer>
 
     <!-- ===== GoatCounter ===== -->
     <script data-goatcounter="https://mohamadfekri.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
-
-    <!-- ===== Stats Script ===== -->
-    <script>
-        // ===== 1. دریافت آمار بازدید از GoatCounter =====
-        function fetchVisitStats() {
-            const visitEl = document.getElementById('visit-count');
-            if (!visitEl) return;
-            
-            fetch('https://mohamadfekri.goatcounter.com/api/v1/stats?period=daily&limit=1')
-                .then(response => response.json())
-                .then(data => {
-                    const total = data.total || 0;
-                    visitEl.textContent = total.toLocaleString();
-                })
-                .catch(() => {
-                    visitEl.textContent = '❌';
-                });
-        }
-
-        // ===== 2. شمارش و نمایش تعداد دانلود =====
-        function initDownloadCounter() {
-            const downloadCountEl = document.getElementById('download-count');
-            if (!downloadCountEl) return;
-
-            // دریافت تعداد از localStorage
-            let count = parseInt(localStorage.getItem('persian_calendar_downloads') || '0');
-            downloadCountEl.textContent = count.toLocaleString();
-
-            // افزودن event listener به دکمه‌های دانلود
-            document.querySelectorAll('#download-btn, #download-btn-2, .file-item[download]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '0') + 1;
-                    localStorage.setItem('persian_calendar_downloads', newCount.toString());
-                    downloadCountEl.textContent = newCount.toLocaleString();
-                    
-                    // ارسال رویداد به GoatCounter (اختیاری)
-                    try {
-                        if (window.goatcounter) {
-                            window.goatcounter.count({
-                                event: 'download',
-                                path: '/download'
-                            });
-                        }
-                    } catch(e) {}
-                });
-            });
-        }
-
-        // ===== 3. اجرا بعد از بارگذاری صفحه =====
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchVisitStats();
-            initDownloadCounter();
-        });
-
-        // ===== 4. به‌روزرسانی آمار هر 60 ثانیه =====
-        setInterval(fetchVisitStats, 60000);
     </script>
 
 </body>
