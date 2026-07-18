@@ -1322,5 +1322,33 @@
     
         document.addEventListener('DOMContentLoaded', updateDownloadCount);
     </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const countElement = document.getElementById('download-count');
+        if (!countElement) {
+            console.warn('Element #download-count not found!');
+            return;
+        }
+
+        // دریافت مقدار از localStorage، اگر نبود از ۲۰ شروع کن
+        let count = parseInt(localStorage.getItem('persian_calendar_downloads'));
+        if (isNaN(count) || count < 20) {
+            count = 20;
+            localStorage.setItem('persian_calendar_downloads', count.toString());
+        }
+
+        countElement.textContent = count.toLocaleString();
+
+        // ثبت کلیک روی دکمه‌های دانلود
+        document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '20') + 1;
+                localStorage.setItem('persian_calendar_downloads', newCount.toString());
+                countElement.textContent = newCount.toLocaleString();
+            });
+        });
+    });
+    </script>
 </body>
 </html>
