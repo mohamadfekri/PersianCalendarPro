@@ -1290,6 +1290,30 @@
             });
         });
     </script>
+    <script>
+    function updateDownloadCount() {
+        const countElement = document.getElementById('download-count');
+        if (!countElement) return;
 
+        // دریافت تعداد دانلود از localStorage
+        let count = parseInt(localStorage.getItem('persian_calendar_downloads') || '0');
+        countElement.textContent = count.toLocaleString();
+
+        // ثبت کلیک روی دکمه‌های دانلود
+        document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // افزایش شمارنده
+                let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '0') + 1;
+                localStorage.setItem('persian_calendar_downloads', newCount.toString());
+
+                // آپدیت نمایش عدد
+                const countEl = document.getElementById('download-count');
+                if (countEl) countEl.textContent = newCount.toLocaleString();
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateDownloadCount);
+    </script>
 </body>
 </html>
