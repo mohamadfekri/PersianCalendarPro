@@ -228,11 +228,12 @@
             background: var(--white);
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
-            padding: 24px 24px 16px;
+            padding: 12px;
             width: 100%;
             max-width: 480px;
             border: 1px solid var(--gray-200);
             transition: var(--transition);
+            background: #0f172a;
         }
 
         .mockup-card:hover {
@@ -240,74 +241,38 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
         }
 
-        .mockup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            font-size: 0.9rem;
-            color: var(--gray-600);
-        }
-
-        .mockup-header .month {
-            font-weight: 600;
-            color: var(--gray-800);
-        }
-
-        .mockup-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .mockup-grid .day-name {
-            font-weight: 600;
-            color: var(--gray-500);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            padding: 4px 0;
-        }
-
-        .mockup-grid .day {
-            padding: 8px 0;
+        .mockup-card video {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            background: var(--gray-50);
-            color: var(--gray-700);
+            display: block;
+            background: #000;
+        }
+
+        .mockup-card .video-download {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .mockup-card .video-download a {
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            width: 100%;
+            justify-content: center;
+            background: #10b981;
+            color: white;
+            border-radius: 40px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
             transition: var(--transition);
         }
 
-        .mockup-grid .day.today {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-
-        .mockup-grid .day.holiday {
-            color: #e53e3e;
-            font-weight: 500;
-        }
-
-        .mockup-grid .day.selected {
-            background: #fbbf24;
-            color: var(--gray-900);
-            font-weight: 600;
-        }
-
-        .mockup-grid .day.other {
-            color: var(--gray-300);
-        }
-
-        .mockup-footer {
-            margin-top: 16px;
-            padding-top: 12px;
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: var(--gray-500);
+        .mockup-card .video-download a:hover {
+            background: #059669;
+            transform: translateY(-2px);
         }
 
         /* Sections */
@@ -743,24 +708,6 @@
             color: var(--primary);
         }
 
-        /* Stats in Footer */
-        .footer-stats {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-        }
-
-        .footer-stats span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-stats i {
-            color: var(--primary);
-        }
-
         /* Responsive */
         body[dir="rtl"] {
             direction: rtl;
@@ -783,10 +730,6 @@
         body[dir="rtl"] .option-item .new-tag {
             margin-left: 0;
             margin-right: auto;
-        }
-
-        body[dir="rtl"] .footer-stats {
-            flex-direction: row-reverse;
         }
 
         @media (max-width: 900px) {
@@ -855,9 +798,6 @@
                 align-items: center;
                 text-align: center;
             }
-            .footer-stats {
-                justify-content: center;
-            }
         }
 
         .text-center {
@@ -900,7 +840,7 @@
                 </div>
 
                 <div class="btn-group">
-                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download id="download-btn">
+                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download>
                         <i class="fas fa-download"></i> <span data-en="Download .pbiviz" data-fa="دانلود فایل .pbiviz">Download .pbiviz</span>
                     </a>
                     <a href="#features" class="btn btn-outline" data-en="See Features" data-fa="مشاهده قابلیت‌ها">
@@ -915,9 +855,26 @@
                 </div>
             </div>
 
+            <!-- ===== فیلم به جای عکس ===== -->
             <div class="hero-visual">
                 <div class="mockup-card">
-                    <img src="persiancalendar.png" alt="Persian Calendar Pro" style="width:100%; height:auto; border-radius:8px; display:block;" />
+                    <video 
+                        controls 
+                        playsinline 
+                        preload="metadata"
+                        poster="persiancalendar.png"
+                    >
+                        <source src="tutorial.mp4" type="video/mp4">
+                        <p data-en="Your browser does not support the video tag. Please download the video below." 
+                           data-fa="مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند. لطفاً ویدیو را از لینک زیر دانلود کنید.">
+                            Your browser does not support the video tag. Please download the video below.
+                        </p>
+                    </video>
+                    <div class="video-download">
+                        <a href="tutorial.mp4" download>
+                            <i class="fas fa-download"></i> <span data-en="Download Video" data-fa="دانلود فیلم آموزشی">Download Video</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1160,7 +1117,7 @@
                     Get the latest version. Compatible with Power BI Desktop and Power BI Service.
                 </p>
                 <div class="btn-group">
-                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download id="download-btn-2">
+                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.0.0.pbiviz" class="btn btn-download" download>
                         <i class="fas fa-file-archive"></i> <span data-en="Download .pbiviz (1.0.0.0)" data-fa="دانلود .pbiviz (۱.۰.۰.۰)">Download .pbiviz (1.0.0.0)</span>
                     </a>
                     <a href="#tech" class="btn btn-outline" data-en="Documentation" data-fa="مستندات">
@@ -1254,86 +1211,85 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="container footer">
+        <span>© 2026 <a href="https://mohamadfekri.github.io" target="_blank">Mohamad Hosein Fekri</a>. <span data-en="All rights reserved." data-fa="تمامی حقوق محفوظ است.">All rights reserved.</span></span>
+        <span>
+            <a href="#" data-en="Privacy" data-fa="حریم خصوصی">Privacy</a> &middot;
+            <a href="#" data-en="Support" data-fa="پشتیبانی">Support</a> &middot;
+            <a href="https://github.com/mohamadfekriu/PersianCalendarPro" target="_blank">GitHub</a>
+        </span>
+    </footer>
 
-    <!-- ===== GoatCounter ===== -->
+    <!-- ===== GoatCounter (فقط برای آمار پشت‌صحنه) ===== -->
     <script data-goatcounter="https://mohamadfekri.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
-    </script>
 
+    <!-- ===== Language Toggle Script ===== -->
     <script>
-    // ===== Language Toggle =====
-    const langBtns = document.querySelectorAll('.lang-btn');
-    const body = document.body;
-    const translatables = document.querySelectorAll('[data-en][data-fa]');
+        // ===== Language Toggle =====
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const body = document.body;
+        const translatables = document.querySelectorAll('[data-en][data-fa]');
 
-    function setLanguage(lang) {
-        // تغییر حالت دکمه‌ها
-        langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-        
-        // تغییر جهت صفحه
-        body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+        function setLanguage(lang) {
+            langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+            body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
 
-        // تغییر متن‌ها
-        translatables.forEach(el => {
-            const text = el.dataset[lang];
-            if (text) {
-                el.innerHTML = text;
+            translatables.forEach(el => {
+                const text = el.dataset[lang];
+                if (text) {
+                    el.innerHTML = text;
+                }
+            });
+
+            document.querySelectorAll('.btn[data-en][data-fa]').forEach(btn => {
+                const span = btn.querySelector('span');
+                if (span) {
+                    span.textContent = btn.dataset[lang];
+                } else {
+                    btn.textContent = btn.dataset[lang];
+                }
+            });
+
+            const monthEl = document.querySelector('.mockup-header .month');
+            if (monthEl && monthEl.dataset[lang]) {
+                monthEl.textContent = monthEl.dataset[lang];
             }
-        });
 
-        // تغییر متن دکمه‌ها (اگر داخل span باشند)
-        document.querySelectorAll('.btn[data-en][data-fa]').forEach(btn => {
-            const span = btn.querySelector('span');
-            if (span) {
-                span.textContent = btn.dataset[lang];
-            } else {
-                btn.textContent = btn.dataset[lang];
-            }
-        });
+            document.querySelectorAll('.mockup-grid .day-name').forEach(el => {
+                if (el.dataset[lang]) {
+                    el.textContent = el.dataset[lang];
+                }
+            });
 
-        // تغییر ماه در mockup
-        const monthEl = document.querySelector('.mockup-header .month');
-        if (monthEl && monthEl.dataset[lang]) {
-            monthEl.textContent = monthEl.dataset[lang];
+            document.querySelectorAll('.footer span[data-en][data-fa]').forEach(el => {
+                el.textContent = el.dataset[lang];
+            });
+
+            localStorage.setItem('preferredLang', lang);
         }
 
-        // تغییر نام روزها در mockup
-        document.querySelectorAll('.mockup-grid .day-name').forEach(el => {
-            if (el.dataset[lang]) {
-                el.textContent = el.dataset[lang];
-            }
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
         });
 
-        // تغییر متن فوتر
-        document.querySelectorAll('.footer span[data-en][data-fa]').forEach(el => {
-            el.textContent = el.dataset[lang];
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        setLanguage(savedLang);
+
+        // ===== Smooth Scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
-
-        // ذخیره در مرورگر
-        localStorage.setItem('preferredLang', lang);
-    }
-
-    // ===== رویداد کلیک روی دکمه‌ها =====
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            setLanguage(btn.dataset.lang);
-        });
-    });
-
-    // ===== بارگذاری زبان ذخیره‌شده =====
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(savedLang);
-
-    // ===== اسکرول نرم =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
     </script>
+
 </body>
 </html>
