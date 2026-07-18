@@ -1140,7 +1140,6 @@
     <section class="section tech-section" id="tech">
         <div class="container">
             <h2 class="section-title" data-en="Technical Details" data-fa="جزئیات فنی">Technical Details</h2>
-            <p class="section-sub" data-en="Everything you need for installation, validation, and AppSource submission." data-fa="هر آنچه برای نصب، اعتبارسنجی و ارسال به AppSource نیاز دارید.">
                 Everything you need for installation, validation, and AppSource submission.
             </p>
 
@@ -1219,6 +1218,11 @@
             <a href="#" data-en="Support" data-fa="پشتیبانی">Support</a> &middot;
             <a href="https://github.com/mohamadfekriu/PersianCalendarPro" target="_blank">GitHub</a>
         </span>
+        <span>
+            <i class="fas fa-download"></i>
+            <span data-en="Downloads:" data-fa="دانلود:">Downloads:</span>
+            <span id="download-count">0</span>
+        </span>
     </footer>
 
     <!-- ===== GoatCounter (فقط برای آمار پشت‌صحنه) ===== -->
@@ -1291,29 +1295,32 @@
         });
     </script>
     <script>
-    function updateDownloadCount() {
-        const countElement = document.getElementById('download-count');
-        if (!countElement) return;
-
-        // دریافت تعداد دانلود از localStorage
-        let count = parseInt(localStorage.getItem('persian_calendar_downloads') || '0');
-        countElement.textContent = count.toLocaleString();
-
-        // ثبت کلیک روی دکمه‌های دانلود
-        document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // افزایش شمارنده
-                let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '0') + 1;
-                localStorage.setItem('persian_calendar_downloads', newCount.toString());
-
-                // آپدیت نمایش عدد
-                const countEl = document.getElementById('download-count');
-                if (countEl) countEl.textContent = newCount.toLocaleString();
+    <script>
+        function updateDownloadCount() {
+            const countElement = document.getElementById('download-count');
+            if (!countElement) return;
+    
+            // دریافت تعداد از localStorage، اگر نبود از ۲۰ شروع کن
+            let count = parseInt(localStorage.getItem('persian_calendar_downloads'));
+            if (isNaN(count) || count < 20) {
+                count = 20;
+                localStorage.setItem('persian_calendar_downloads', count.toString());
+            }
+    
+            countElement.textContent = count.toLocaleString();
+    
+            // ثبت کلیک روی دکمه‌های دانلود
+            document.querySelectorAll('.btn-download, .file-item[download]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    let newCount = parseInt(localStorage.getItem('persian_calendar_downloads') || '20') + 1;
+                    localStorage.setItem('persian_calendar_downloads', newCount.toString());
+                    const countEl = document.getElementById('download-count');
+                    if (countEl) countEl.textContent = newCount.toLocaleString();
+                });
             });
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', updateDownloadCount);
+        }
+    
+        document.addEventListener('DOMContentLoaded', updateDownloadCount);
     </script>
 </body>
 </html>
