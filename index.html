@@ -183,8 +183,9 @@
             flex: 1;
         }
 
-        /* Screenshots */
-        .visual-card .vis-screenshot {
+        /* ===== Screenshot Gallery ===== */
+        .screenshot-gallery {
+            position: relative;
             width: 100%;
             margin: 6px 0 10px 0;
             border-radius: 6px;
@@ -193,12 +194,76 @@
             overflow: hidden;
         }
 
-        .visual-card .vis-screenshot img {
+        .screenshot-gallery .slider-container {
+            position: relative;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .screenshot-gallery .slider-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            max-height: 160px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .screenshot-gallery .slider-container img.active {
+            opacity: 1;
+        }
+
+        .screenshot-gallery .slider-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 12px;
+            background: #f8faff;
+            border-top: 1px solid #e6eaef;
+        }
+
+        .screenshot-gallery .slider-nav button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .screenshot-gallery .slider-nav button:hover {
+            background: #eef2f7;
+        }
+
+        .screenshot-gallery .slider-nav .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .screenshot-gallery .slider-nav .dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d0d7e2;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .screenshot-gallery .slider-nav .dots span.active {
+            background: #0078D4;
+        }
+
+        .screenshot-gallery .slider-nav .counter {
+            font-size: 12px;
+            color: #888;
+            min-width: 40px;
+            text-align: center;
         }
 
         .visual-card .vis-features {
@@ -367,8 +432,8 @@
             .footer .developer-info {
                 justify-content: center;
             }
-            .visual-card .vis-screenshot img {
-                max-height: 120px;
+            .screenshot-gallery .slider-container {
+                height: 140px;
             }
         }
     </style>
@@ -407,9 +472,23 @@
                     <h2 id="vis1Title">Smart Card Pro</h2>
                 </div>
                 <div class="vis-version" id="vis1Version">v1.0.0.0</div>
-                <div class="vis-screenshot">
-                    <img src="screenshot1.png" alt="Smart Card Pro Screenshot" />
+
+                <!-- Screenshot Gallery for Card -->
+                <div class="screenshot-gallery" id="gallery1">
+                    <div class="slider-container" id="slider1">
+                        <img src="screenshot1.png" alt="Card View 1" class="active" />
+                        <img src="screenshot2.png" alt="Card View 2" />
+                        <img src="screenshot3.png" alt="Card View 3" />
+                        <img src="screenshot.png" alt="Card View 4" />
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="dots" id="dots1"></div>
+                        <span class="counter" id="counter1">1 / 4</span>
+                        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
+
                 <div class="vis-desc" id="vis1Desc">Professional smart card with unit conversion, trend indicator, and full customization.</div>
                 <div class="vis-features" id="vis1Features">
                     <span>🔄 Unit Conversion</span>
@@ -434,9 +513,25 @@
                     <h2 id="vis2Title">Persian Calendar Pro</h2>
                 </div>
                 <div class="vis-version" id="vis2Version">v1.0.1.0</div>
-                <div class="vis-screenshot">
-                    <img src="screenshot2.png" alt="Persian Calendar Pro Screenshot" />
+
+                <!-- Screenshot Gallery for Calendar -->
+                <div class="screenshot-gallery" id="gallery2">
+                    <div class="slider-container" id="slider2">
+                        <img src="HeatMapView.png" alt="Heatmap View" class="active" />
+                        <img src="AnnualView.png" alt="Annual View" />
+                        <img src="SelectionView.png" alt="Selection Modes" />
+                        <img src="RangeSelection.png" alt="Date Range Selection" />
+                        <img src="SelectedCount.png" alt="Selected Days Count" />
+                        <img src="CollapsedView.png" alt="Collapsed Calendar" />
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="dots" id="dots2"></div>
+                        <span class="counter" id="counter2">1 / 6</span>
+                        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
+
                 <div class="vis-desc" id="vis2Desc">First Jalali calendar for Power BI with date selection, holiday highlighting, and full customization.</div>
                 <div class="vis-features" id="vis2Features">
                     <span>📅 Jalali Calendar</span>
@@ -473,12 +568,12 @@
                 </span>
                 <span>
                     <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/mohamad_hosein_fekri" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/mohamad-hosein-fekri" target="_blank">LinkedIn</a>
                 </span>
             </div>
             <div class="socials">
                 <a href="https://github.com/mohamadfekri" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohamad_hosein_fekri" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/mohamad-hosein-fekri" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:mohamadfekri@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
@@ -492,6 +587,70 @@
     </div>
 
     <script>
+        // ===== Gallery Slider =====
+        function initGallery(galleryId, sliderId, dotsId, counterId) {
+            const gallery = document.getElementById(galleryId);
+            const slider = document.getElementById(sliderId);
+            const dots = document.getElementById(dotsId);
+            const counter = document.getElementById(counterId);
+            const images = slider.querySelectorAll('img');
+            const prevBtn = gallery.querySelector('.prev-btn');
+            const nextBtn = gallery.querySelector('.next-btn');
+            let currentIndex = 0;
+
+            // Create dots
+            images.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.addEventListener('click', () => goTo(i));
+                dots.appendChild(dot);
+            });
+            const dotElements = dots.querySelectorAll('span');
+
+            function goTo(index) {
+                images.forEach(img => img.classList.remove('active'));
+                dotElements.forEach(d => d.classList.remove('active'));
+                images[index].classList.add('active');
+                dotElements[index].classList.add('active');
+                currentIndex = index;
+                counter.textContent = (index + 1) + ' / ' + images.length;
+            }
+
+            function next() {
+                const newIndex = (currentIndex + 1) % images.length;
+                goTo(newIndex);
+            }
+
+            function prev() {
+                const newIndex = (currentIndex - 1 + images.length) % images.length;
+                goTo(newIndex);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', next);
+            prevBtn.addEventListener('click', prev);
+
+            // Keyboard navigation
+            gallery.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            // Auto-play every 5 seconds
+            let autoplay = setInterval(next, 5000);
+
+            gallery.addEventListener('mouseenter', () => clearInterval(autoplay));
+            gallery.addEventListener('mouseleave', () => {
+                autoplay = setInterval(next, 5000);
+            });
+
+            // Initialize
+            goTo(0);
+        }
+
+        // ===== Initialize both galleries =====
+        initGallery('gallery1', 'slider1', 'dots1', 'counter1');
+        initGallery('gallery2', 'slider2', 'dots2', 'counter2');
+
         // ===== Language Data =====
         const langData = {
             en: {
