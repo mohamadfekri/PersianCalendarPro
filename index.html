@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Card Pro - Power BI Visuals</title>
+    <title>Smart Card Pro & Persian Calendar Pro | Power BI Visuals</title>
 
     <!-- ===== GoatCounter Analytics ===== -->
     <script data-goatcounter="https://mohamadhoseinfekri.goatcounter.com/count"
@@ -183,7 +183,7 @@
             flex: 1;
         }
 
-        /* ===== Visual Screenshots ===== */
+        /* Screenshots */
         .visual-card .vis-screenshot {
             width: 100%;
             margin: 6px 0 10px 0;
@@ -258,6 +258,14 @@
 
         .btn-download i {
             font-size: 16px;
+        }
+
+        .btn-download.green {
+            background: #10b981;
+        }
+
+        .btn-download.green:hover {
+            background: #059669;
         }
 
         /* ===== Footer ===== */
@@ -374,8 +382,8 @@
             <div class="header-left">
                 <span class="icon-big">📊</span>
                 <div>
-                    <h1 id="mainTitle">Smart Card Pro</h1>
-                    <span class="badge" id="mainBadge">Power BI Custom Visuals</span>
+                    <h1 id="mainTitle">Power BI Visuals</h1>
+                    <span class="badge" id="mainBadge">Professional Custom Visuals</span>
                 </div>
             </div>
             <div class="lang-toggle">
@@ -384,13 +392,13 @@
             </div>
         </div>
 
-        <p class="subtitle" id="mainSubtitle">Professional Smart Card Visuals for Power BI</p>
+        <p class="subtitle" id="mainSubtitle">Professional Power BI Custom Visuals by Mohamad Fekri</p>
         <p class="version" id="mainVersion">Version 1.0.0.0</p>
 
         <hr />
 
         <!-- ===== Visuals Grid ===== -->
-        <div class="visuals-grid" id="visualsGrid">
+        <div class="visuals-grid">
 
             <!-- ===== Visual 1: Smart Card Pro ===== -->
             <div class="visual-card" id="vis1">
@@ -425,11 +433,11 @@
                     <img src="icon2.png" alt="Persian Calendar Pro Icon" />
                     <h2 id="vis2Title">Persian Calendar Pro</h2>
                 </div>
-                <div class="vis-version" id="vis2Version">v1.0.0.0</div>
+                <div class="vis-version" id="vis2Version">v1.0.1.0</div>
                 <div class="vis-screenshot">
                     <img src="screenshot2.png" alt="Persian Calendar Pro Screenshot" />
                 </div>
-                <div class="vis-desc" id="vis2Desc">Professional Persian (Jalali) calendar with date selection, holiday highlighting, and full customization.</div>
+                <div class="vis-desc" id="vis2Desc">First Jalali calendar for Power BI with date selection, holiday highlighting, and full customization.</div>
                 <div class="vis-features" id="vis2Features">
                     <span>📅 Jalali Calendar</span>
                     <span>🎯 Date Selection</span>
@@ -439,8 +447,8 @@
                     <span>📱 Responsive</span>
                 </div>
                 <div class="vis-download">
-                    <span class="file-name">persian-calendar-pro-1.0.0.0.pbiviz</span>
-                    <a href="#" class="btn-download" download id="download2">
+                    <span class="file-name">persianCalendarPro...1.0.1.0.pbiviz</span>
+                    <a href="persianCalendarPro8300E12ED67D4E42831B577B4CA75A4F.1.0.1.0.pbiviz" class="btn-download green" download id="download2">
                         <i class="fas fa-download"></i> <span id="download2Text">Download</span>
                     </a>
                 </div>
@@ -461,7 +469,7 @@
                 </span>
                 <span>
                     <i class="fab fa-github"></i>
-                    <a href="https://github.com/mohamadfekri/PersianSmartCardpro" target="_blank">GitHub</a>
+                    <a href="https://github.com/mohamadfekri" target="_blank">GitHub</a>
                 </span>
                 <span>
                     <i class="fab fa-linkedin"></i>
@@ -487,35 +495,35 @@
         // ===== Language Data =====
         const langData = {
             en: {
-                mainTitle: 'Smart Card Pro',
-                mainBadge: 'Power BI Custom Visuals',
-                mainSubtitle: 'Professional Smart Card Visuals for Power BI',
+                mainTitle: 'Power BI Visuals',
+                mainBadge: 'Professional Custom Visuals',
+                mainSubtitle: 'Professional Power BI Custom Visuals by Mohamad Fekri',
                 mainVersion: 'Version 1.0.0.0',
                 vis1Title: 'Smart Card Pro',
                 vis1Version: 'v1.0.0.0',
                 vis1Desc: 'Professional smart card with unit conversion, trend indicator, and full customization.',
                 vis1Features: ['🔄 Unit Conversion', '📈 Trend Indicator', '🎨 Full Customization', '🌍 Persian / English', '🔢 Persian Numbers', '📐 Card Layout'],
                 vis2Title: 'Persian Calendar Pro',
-                vis2Version: 'v1.0.0.0',
-                vis2Desc: 'Professional Persian (Jalali) calendar with date selection, holiday highlighting, and full customization.',
+                vis2Version: 'v1.0.1.0',
+                vis2Desc: 'First Jalali calendar for Power BI with date selection, holiday highlighting, and full customization.',
                 vis2Features: ['📅 Jalali Calendar', '🎯 Date Selection', '🔴 Holiday Highlighting', '🌍 Persian / English', '🎨 Full Customization', '📱 Responsive'],
                 download1: 'Download',
                 download2: 'Download',
                 credit: 'Built with ❤️ for the Power BI Community'
             },
             fa: {
-                mainTitle: 'اسمارت کارت پرو',
-                mainBadge: 'ویژوال‌های سفارشی پاور بی آی',
-                mainSubtitle: 'ویژوال‌های کارت هوشمند حرفه‌ای برای پاور بی آی',
+                mainTitle: 'ویژوال‌های پاور بی آی',
+                mainBadge: 'ویژوال‌های سفارشی حرفه‌ای',
+                mainSubtitle: 'ویژوال‌های سفارشی حرفه‌ای پاور بی آی توسط محمد فکری',
                 mainVersion: 'نسخه 1.0.0.0',
                 vis1Title: 'اسمارت کارت پرو',
                 vis1Version: 'نسخه 1.0.0.0',
                 vis1Desc: 'کارت هوشمند حرفه‌ای با تبدیل واحد، نمایش روند و شخصی‌سازی کامل.',
                 vis1Features: ['🔄 تبدیل واحد', '📈 نمایش روند', '🎨 شخصی‌سازی کامل', '🌍 فارسی / انگلیسی', '🔢 اعداد فارسی', '📐 جانمایی کارد'],
                 vis2Title: 'تقویم فارسی حرفه‌ای',
-                vis2Version: 'نسخه 1.0.0.0',
-                vis2Desc: 'تقویم حرفه‌ای شمسی (جلالی) با انتخاب تاریخ، هایلایت تعطیلات و شخصی‌سازی کامل.',
-                vis2Features: ['📅 تقویم شمسی', '🎯 انتخاب تاریخ', '🔴 هایلایت تعطیلات', '🌍 فارسی / انگلیسی', '🎨 شخصی‌سازی کامل', '📱 واکنش‌گرا'],
+                vis2Version: 'نسخه 1.0.1.0',
+                vis2Desc: 'اولین تقویم جلالی برای پاور بی‌آی با انتخاب تاریخ، هایلایت تعطیلات و شخصی‌سازی کامل.',
+                vis2Features: ['📅 تقویم جلالی', '🎯 انتخاب تاریخ', '🔴 هایلایت تعطیلات', '🌍 فارسی / انگلیسی', '🎨 شخصی‌سازی کامل', '📱 واکنش‌گرا'],
                 download1: 'دانلود',
                 download2: 'دانلود',
                 credit: 'ساخته شده با ❤️ برای جامعه پاور بی آی'
