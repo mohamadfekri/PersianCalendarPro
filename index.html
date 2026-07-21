@@ -183,6 +183,24 @@
             flex: 1;
         }
 
+        /* ===== Visual Screenshots ===== */
+        .visual-card .vis-screenshot {
+            width: 100%;
+            margin: 6px 0 10px 0;
+            border-radius: 6px;
+            border: 1px solid #e6eaef;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .visual-card .vis-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 160px;
+        }
+
         .visual-card .vis-features {
             display: flex;
             flex-wrap: wrap;
@@ -341,6 +359,9 @@
             .footer .developer-info {
                 justify-content: center;
             }
+            .visual-card .vis-screenshot img {
+                max-height: 120px;
+            }
         }
     </style>
 </head>
@@ -371,13 +392,16 @@
         <!-- ===== Visuals Grid ===== -->
         <div class="visuals-grid" id="visualsGrid">
 
-            <!-- ===== Visual 1: Smart Card Pro (Original) ===== -->
+            <!-- ===== Visual 1: Smart Card Pro ===== -->
             <div class="visual-card" id="vis1">
                 <div class="vis-header">
                     <img src="icon.png" alt="Smart Card Pro Icon" />
                     <h2 id="vis1Title">Smart Card Pro</h2>
                 </div>
                 <div class="vis-version" id="vis1Version">v1.0.0.0</div>
+                <div class="vis-screenshot">
+                    <img src="screenshot1.png" alt="Smart Card Pro Screenshot" />
+                </div>
                 <div class="vis-desc" id="vis1Desc">Professional smart card with unit conversion, trend indicator, and full customization.</div>
                 <div class="vis-features" id="vis1Features">
                     <span>🔄 Unit Conversion</span>
@@ -395,24 +419,27 @@
                 </div>
             </div>
 
-            <!-- ===== Visual 2: New Visual ===== -->
+            <!-- ===== Visual 2: Persian Calendar Pro ===== -->
             <div class="visual-card" id="vis2">
                 <div class="vis-header">
-                    <img src="icon2.png" alt="New Visual Icon" />
-                    <h2 id="vis2Title">New Visual</h2>
+                    <img src="icon2.png" alt="Persian Calendar Pro Icon" />
+                    <h2 id="vis2Title">Persian Calendar Pro</h2>
                 </div>
                 <div class="vis-version" id="vis2Version">v1.0.0.0</div>
-                <div class="vis-desc" id="vis2Desc">Power BI custom visual with advanced features and modern design.</div>
+                <div class="vis-screenshot">
+                    <img src="screenshot2.png" alt="Persian Calendar Pro Screenshot" />
+                </div>
+                <div class="vis-desc" id="vis2Desc">Professional Persian (Jalali) calendar with date selection, holiday highlighting, and full customization.</div>
                 <div class="vis-features" id="vis2Features">
-                    <span>⚡ High Performance</span>
-                    <span>🎯 Smart Metrics</span>
-                    <span>📊 Dynamic Charts</span>
-                    <span>🌍 Bilingual</span>
-                    <span>🎨 Customizable</span>
+                    <span>📅 Jalali Calendar</span>
+                    <span>🎯 Date Selection</span>
+                    <span>🔴 Holiday Highlighting</span>
+                    <span>🌍 Persian / English</span>
+                    <span>🎨 Full Customization</span>
                     <span>📱 Responsive</span>
                 </div>
                 <div class="vis-download">
-                    <span class="file-name" id="vis2FileName">new-visual-1.0.0.0.pbiviz</span>
+                    <span class="file-name">persian-calendar-pro-1.0.0.0.pbiviz</span>
                     <a href="#" class="btn-download" download id="download2">
                         <i class="fas fa-download"></i> <span id="download2Text">Download</span>
                     </a>
@@ -468,11 +495,10 @@
                 vis1Version: 'v1.0.0.0',
                 vis1Desc: 'Professional smart card with unit conversion, trend indicator, and full customization.',
                 vis1Features: ['🔄 Unit Conversion', '📈 Trend Indicator', '🎨 Full Customization', '🌍 Persian / English', '🔢 Persian Numbers', '📐 Card Layout'],
-                vis2Title: 'New Visual',
+                vis2Title: 'Persian Calendar Pro',
                 vis2Version: 'v1.0.0.0',
-                vis2Desc: 'Power BI custom visual with advanced features and modern design.',
-                vis2Features: ['⚡ High Performance', '🎯 Smart Metrics', '📊 Dynamic Charts', '🌍 Bilingual', '🎨 Customizable', '📱 Responsive'],
-                vis2FileName: 'new-visual-1.0.0.0.pbiviz',
+                vis2Desc: 'Professional Persian (Jalali) calendar with date selection, holiday highlighting, and full customization.',
+                vis2Features: ['📅 Jalali Calendar', '🎯 Date Selection', '🔴 Holiday Highlighting', '🌍 Persian / English', '🎨 Full Customization', '📱 Responsive'],
                 download1: 'Download',
                 download2: 'Download',
                 credit: 'Built with ❤️ for the Power BI Community'
@@ -486,11 +512,10 @@
                 vis1Version: 'نسخه 1.0.0.0',
                 vis1Desc: 'کارت هوشمند حرفه‌ای با تبدیل واحد، نمایش روند و شخصی‌سازی کامل.',
                 vis1Features: ['🔄 تبدیل واحد', '📈 نمایش روند', '🎨 شخصی‌سازی کامل', '🌍 فارسی / انگلیسی', '🔢 اعداد فارسی', '📐 جانمایی کارد'],
-                vis2Title: 'ویژوال جدید',
+                vis2Title: 'تقویم فارسی حرفه‌ای',
                 vis2Version: 'نسخه 1.0.0.0',
-                vis2Desc: 'ویژوال سفارشی پاور بی آی با قابلیت‌های پیشرفته و طراحی مدرن.',
-                vis2Features: ['⚡ عملکرد بالا', '🎯 متریک‌های هوشمند', '📊 نمودارهای پویا', '🌍 دو زبانه', '🎨 قابل شخصی‌سازی', '📱 واکنش‌گرا'],
-                vis2FileName: 'new-visual-1.0.0.0.pbiviz',
+                vis2Desc: 'تقویم حرفه‌ای شمسی (جلالی) با انتخاب تاریخ، هایلایت تعطیلات و شخصی‌سازی کامل.',
+                vis2Features: ['📅 تقویم شمسی', '🎯 انتخاب تاریخ', '🔴 هایلایت تعطیلات', '🌍 فارسی / انگلیسی', '🎨 شخصی‌سازی کامل', '📱 واکنش‌گرا'],
                 download1: 'دانلود',
                 download2: 'دانلود',
                 credit: 'ساخته شده با ❤️ برای جامعه پاور بی آی'
@@ -526,7 +551,6 @@
                 if (features2[i]) features2[i].textContent = text;
             });
 
-            document.getElementById('vis2FileName').textContent = data.vis2FileName;
             document.getElementById('download1Text').textContent = data.download1;
             document.getElementById('download2Text').textContent = data.download2;
             document.getElementById('creditText').textContent = data.credit;
@@ -568,8 +592,8 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         event: 'download',
-                        path: '/download/new-visual.pbiviz',
-                        title: 'Download New Visual'
+                        path: '/download/persian-calendar-pro.pbiviz',
+                        title: 'Download Persian Calendar Pro'
                     })
                 }).catch(() => {});
             }
