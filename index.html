@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PersianVisualPro | Power BI Visuals</title>
+    <title>Smart Card Pro & Persian Calendar Pro | Power BI Visuals</title>
 
     <!-- ===== GoatCounter Analytics ===== -->
     <script data-goatcounter="https://mohamadfekri.goatcounter.com/count"
@@ -466,7 +466,7 @@
     <div class="container" id="app">
 
         <!-- ===== Visit Counter ===== -->
-        <div class="visit-counter" id="visitCounter">
+        <div class="visit-counter">
             <i class="fas fa-eye"></i>
             <span id="visitCountText">Loading visits...</span>
         </div>
@@ -502,7 +502,6 @@
                 </div>
                 <div class="vis-version" id="vis1Version">v1.0.0.0</div>
 
-                <!-- Screenshot Gallery for Card -->
                 <div class="screenshot-gallery" id="gallery1">
                     <div class="slider-container" id="slider1">
                         <img src="screenshot1.png" alt="Card View 1" class="active" />
@@ -543,7 +542,6 @@
                 </div>
                 <div class="vis-version" id="vis2Version">v1.0.1.0</div>
 
-                <!-- Screenshot Gallery for Calendar -->
                 <div class="screenshot-gallery" id="gallery2">
                     <div class="slider-container" id="slider2">
                         <img src="HeatMapView.png" alt="Heatmap View" class="active" />
@@ -619,7 +617,7 @@
         // ===== GoatCounter Visit Counter =====
         (function() {
             var t = setInterval(function() {
-                if (window.goatcounter && window.goatcounter.visit_count) {
+                if (window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
                     clearInterval(t);
                     window.goatcounter.visit_count({
                         append: function(element, count) {
@@ -774,7 +772,7 @@
 
             // Update visit counter text
             var el = document.getElementById('visitCountText');
-            if (el && window.goatcounter && window.goatcounter.visit_count) {
+            if (el && window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
                 window.goatcounter.visit_count({
                     append: function(element, count) {
                         var text = lang === 'fa' ? 'بازدید: ' : 'Visits: ';
@@ -784,33 +782,35 @@
             }
         }
 
-        // ===== Download Tracking =====
-        document.getElementById('download1').addEventListener('click', function(e) {
-            if (window.goatcounter) {
-                fetch('https://mohamadfekri.goatcounter.com/count', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
+        // ===== Download Tracking with GoatCounter =====
+        function trackDownload(fileName) {
+            // استفاده از روش استاندارد GoatCounter
+            if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+                window.goatcounter.count({
+                    event: true,
+                    path: '/download/' + fileName,
+                    title: 'Download ' + fileName
+                });
+            } else {
+                // Fallback: send a beacon
+                try {
+                    navigator.sendBeacon('https://mohamadfekri.goatcounter.com/count', JSON.stringify({
                         event: 'download',
-                        path: '/download/smart-card-pro.pbiviz',
-                        title: 'Download Smart Card Pro'
-                    })
-                }).catch(() => {});
+                        path: '/download/' + fileName,
+                        title: 'Download ' + fileName
+                    }));
+                } catch (e) {
+                    // ignore
+                }
             }
+        }
+
+        document.getElementById('download1').addEventListener('click', function(e) {
+            trackDownload('smart-card-pro.pbiviz');
         });
 
         document.getElementById('download2').addEventListener('click', function(e) {
-            if (window.goatcounter) {
-                fetch('https://mohamadfekri.goatcounter.com/count', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        event: 'download',
-                        path: '/download/persian-calendar-pro.pbiviz',
-                        title: 'Download Persian Calendar Pro'
-                    })
-                }).catch(() => {});
-            }
+            trackDownload('persian-calendar-pro.pbiviz');
         });
 
         // ===== Set default language =====
