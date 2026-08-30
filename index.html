@@ -333,6 +333,14 @@
             background: #059669;
         }
 
+        .btn-download.purple {
+            background: #7c3aed;
+        }
+
+        .btn-download.purple:hover {
+            background: #6d28d9;
+        }
+
         /* ===== Footer ===== */
         .footer {
             margin-top: 20px;
@@ -547,6 +555,46 @@
                 </div>
             </div>
 
+            <!-- ===== Visual 3: Minimal Alert Panel ===== -->
+            <div class="visual-card" id="vis3">
+                <div class="vis-header">
+                    <img src="icon3.png" alt="Minimal Alert Panel Icon" />
+                    <h2 id="vis3Title">Minimal Alert Panel</h2>
+                </div>
+                <div class="vis-version" id="vis3Version">v1.0.0.0</div>
+
+                <div class="screenshot-gallery" id="gallery3">
+                    <div class="slider-container" id="slider3">
+                        <img src="alertpanel-overview.png" alt="Alert Panel Overview" class="active" />
+                        <img src="alertpanel-critical.png" alt="Critical Alert Row" />
+                        <img src="alertpanel-emptystate.png" alt="Empty / All Clear State" />
+                        <img src="alertpanel-formatpane.png" alt="Format Pane Settings" />
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="dots" id="dots3"></div>
+                        <span class="counter" id="counter3">1 / 4</span>
+                        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="vis-desc" id="vis3Desc">Minimal alert / status panel that lists only the indicators currently in warning, alert, or critical state, each with a pulsing icon and a fully customizable look.</div>
+                <div class="vis-features" id="vis3Features">
+                    <span>🚦 3-Level Alerts</span>
+                    <span>💓 Pulsing Icons</span>
+                    <span>🧠 Auto Direction Detection</span>
+                    <span>✅ Custom Empty State</span>
+                    <span>🎨 Full Customization</span>
+                    <span>🌍 Persian / English</span>
+                </div>
+                <div class="vis-download">
+                    <span class="file-name">alertPanelA63C14694E474C5BA89EE286D1F7B721.1.0.0.0.pbiviz</span>
+                    <a href="alertPanelA63C14694E474C5BA89EE286D1F7B721.1.0.0.0.pbiviz" class="btn-download purple" download id="download3">
+                        <i class="fas fa-download"></i> <span id="download3Text">Download</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
         <!-- ===== Footer ===== -->
@@ -639,6 +687,7 @@
 
         initGallery('gallery1', 'slider1', 'dots1', 'counter1');
         initGallery('gallery2', 'slider2', 'dots2', 'counter2');
+        initGallery('gallery3', 'slider3', 'dots3', 'counter3');
 
         // ===== Download Tracking with GoatCounter =====
         function trackDownload(fileName) {
@@ -667,6 +716,10 @@
             trackDownload('persian-calendar-pro.pbiviz');
         });
 
+        document.getElementById('download3').addEventListener('click', function(e) {
+            trackDownload('minimal-alert-panel.pbiviz');
+        });
+
         // ===== Language Data =====
         const langData = {
             en: {
@@ -682,8 +735,13 @@
                 vis2Version: 'v1.0.1.0',
                 vis2Desc: 'First Jalali calendar for Power BI with date selection, holiday highlighting, and full customization.',
                 vis2Features: ['📅 Jalali Calendar', '🎯 Date Selection', '🔴 Holiday Highlighting', '🌍 Persian / English', '🎨 Full Customization', '📱 Responsive'],
+                vis3Title: 'Minimal Alert Panel',
+                vis3Version: 'v1.0.0.0',
+                vis3Desc: 'Minimal alert / status panel that lists only the indicators currently in warning, alert, or critical state, each with a pulsing icon and a fully customizable look.',
+                vis3Features: ['🚦 3-Level Alerts', '💓 Pulsing Icons', '🧠 Auto Direction Detection', '✅ Custom Empty State', '🎨 Full Customization', '🌍 Persian / English'],
                 download1: 'Download',
                 download2: 'Download',
+                download3: 'Download',
                 credit: 'Built with ❤️ for the Power BI Community'
             },
             fa: {
@@ -699,8 +757,13 @@
                 vis2Version: 'نسخه 1.0.1.0',
                 vis2Desc: 'اولین تقویم جلالی برای پاور بی‌آی با انتخاب تاریخ، هایلایت تعطیلات و شخصی‌سازی کامل.',
                 vis2Features: ['📅 تقویم جلالی', '🎯 انتخاب تاریخ', '🔴 هایلایت تعطیلات', '🌍 فارسی / انگلیسی', '🎨 شخصی‌سازی کامل', '📱 واکنش‌گرا'],
+                vis3Title: 'پنل هشدار مینیمال',
+                vis3Version: 'نسخه 1.0.0.0',
+                vis3Desc: 'پنل وضعیت/هشدار مینیمال که فقط شاخص‌هایی که در وضعیت هشدار، اخطار یا بحران هستند را با آیکون پالس‌دار نمایش می‌دهد و کاملاً قابل شخصی‌سازی است.',
+                vis3Features: ['🚦 سه سطح هشدار', '💓 آیکون‌های پالس‌دار', '🧠 تشخیص خودکار جهت', '✅ پیام سفارشی بدون هشدار', '🎨 شخصی‌سازی کامل', '🌍 فارسی / انگلیسی'],
                 download1: 'دانلود',
                 download2: 'دانلود',
+                download3: 'دانلود',
                 credit: 'ساخته شده با ❤️ برای جامعه پاور بی آی'
             }
         };
@@ -734,8 +797,18 @@
                 if (features2[i]) features2[i].textContent = text;
             });
 
+            document.getElementById('vis3Title').textContent = data.vis3Title;
+            document.getElementById('vis3Version').textContent = data.vis3Version;
+            document.getElementById('vis3Desc').textContent = data.vis3Desc;
+
+            const features3 = document.querySelectorAll('#vis3 .vis-features span');
+            data.vis3Features.forEach((text, i) => {
+                if (features3[i]) features3[i].textContent = text;
+            });
+
             document.getElementById('download1Text').textContent = data.download1;
             document.getElementById('download2Text').textContent = data.download2;
+            document.getElementById('download3Text').textContent = data.download3;
             document.getElementById('creditText').textContent = data.credit;
 
             document.getElementById('langEn').className = lang === 'en' ? 'active' : '';
